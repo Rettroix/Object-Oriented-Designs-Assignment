@@ -12,31 +12,31 @@ namespace ORMTest
     public partial class Program : Form
     {
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtName;
         private Button Save;
-        private TextBox textBox2;
+        private TextBox txtEmail;
         private Label label2;
-        private TextBox textBox3;
+        private TextBox txtMachineDescription;
         private Label label3;
         private Button button2;
-        private Button button3;
-        private TextBox textBox4;
+        private Button btnCancel;
+        private TextBox txtFaultDescription;
         private Label label4;
         private Label label5;
         private Label label6;
         private Label label7;
         private Label label8;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private TextBox txtJobUrgency;
+        private TextBox txtMachineComplexity;
         private Label label9;
         private Label label10;
         private Label label11;
         private Label label12;
         private Label label13;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
+        private TextBox txtHouseNumber;
+        private TextBox txtStreet;
+        private TextBox txtTown;
+        private TextBox txtPostcode;
         private DataGridView dataGridView1;
     
         public Program()
@@ -126,32 +126,32 @@ namespace ORMTest
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.Save = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtMachineDescription = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.txtFaultDescription = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtJobUrgency = new System.Windows.Forms.TextBox();
+            this.txtMachineComplexity = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtHouseNumber = new System.Windows.Forms.TextBox();
+            this.txtStreet = new System.Windows.Forms.TextBox();
+            this.txtTown = new System.Windows.Forms.TextBox();
+            this.txtPostcode = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,12 +165,12 @@ namespace ORMTest
             this.label1.Text = "Name";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(90, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtName.Location = new System.Drawing.Point(90, 38);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(228, 22);
+            this.txtName.TabIndex = 1;
             // 
             // Save
             // 
@@ -191,12 +191,13 @@ namespace ORMTest
             this.dataGridView1.Size = new System.Drawing.Size(484, 448);
             this.dataGridView1.TabIndex = 3;
             // 
-            // textBox2
+            // txtEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(90, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(228, 22);
-            this.textBox2.TabIndex = 5;
+            this.txtEmail.Location = new System.Drawing.Point(90, 66);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(228, 22);
+            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label2
             // 
@@ -207,13 +208,13 @@ namespace ORMTest
             this.label2.TabIndex = 4;
             this.label2.Text = "Email";
             // 
-            // textBox3
+            // txtMachineDescription
             // 
-            this.textBox3.Location = new System.Drawing.Point(186, 126);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(228, 22);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtMachineDescription.Location = new System.Drawing.Point(186, 126);
+            this.txtMachineDescription.Name = "txtMachineDescription";
+            this.txtMachineDescription.Size = new System.Drawing.Size(228, 22);
+            this.txtMachineDescription.TabIndex = 7;
+            this.txtMachineDescription.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label3
             // 
@@ -234,23 +235,23 @@ namespace ORMTest
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnCancel
             // 
-            this.button3.Location = new System.Drawing.Point(218, 437);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnCancel.Location = new System.Drawing.Point(218, 437);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox4
+            // txtFaultDescription
             // 
-            this.textBox4.Location = new System.Drawing.Point(186, 153);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(228, 22);
-            this.textBox4.TabIndex = 11;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.txtFaultDescription.Location = new System.Drawing.Point(186, 153);
+            this.txtFaultDescription.Name = "txtFaultDescription";
+            this.txtFaultDescription.Size = new System.Drawing.Size(228, 22);
+            this.txtFaultDescription.TabIndex = 11;
+            this.txtFaultDescription.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label4
             // 
@@ -301,19 +302,19 @@ namespace ORMTest
             this.label8.Text = "Machine Complexity";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // textBox5
+            // txtJobUrgency
             // 
-            this.textBox5.Location = new System.Drawing.Point(186, 185);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(228, 22);
-            this.textBox5.TabIndex = 16;
+            this.txtJobUrgency.Location = new System.Drawing.Point(186, 185);
+            this.txtJobUrgency.Name = "txtJobUrgency";
+            this.txtJobUrgency.Size = new System.Drawing.Size(228, 22);
+            this.txtJobUrgency.TabIndex = 16;
             // 
-            // textBox6
+            // txtMachineComplexity
             // 
-            this.textBox6.Location = new System.Drawing.Point(186, 216);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(228, 22);
-            this.textBox6.TabIndex = 17;
+            this.txtMachineComplexity.Location = new System.Drawing.Point(186, 216);
+            this.txtMachineComplexity.Name = "txtMachineComplexity";
+            this.txtMachineComplexity.Size = new System.Drawing.Size(228, 22);
+            this.txtMachineComplexity.TabIndex = 17;
             // 
             // label9
             // 
@@ -360,63 +361,63 @@ namespace ORMTest
             this.label13.TabIndex = 22;
             this.label13.Text = "Postcode";
             // 
-            // textBox7
+            // txtHouseNumber
             // 
-            this.textBox7.Location = new System.Drawing.Point(210, 295);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(228, 22);
-            this.textBox7.TabIndex = 23;
+            this.txtHouseNumber.Location = new System.Drawing.Point(210, 295);
+            this.txtHouseNumber.Name = "txtHouseNumber";
+            this.txtHouseNumber.Size = new System.Drawing.Size(228, 22);
+            this.txtHouseNumber.TabIndex = 23;
             // 
-            // textBox8
+            // txtStreet
             // 
-            this.textBox8.Location = new System.Drawing.Point(210, 323);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(228, 22);
-            this.textBox8.TabIndex = 24;
+            this.txtStreet.Location = new System.Drawing.Point(210, 323);
+            this.txtStreet.Name = "txtStreet";
+            this.txtStreet.Size = new System.Drawing.Size(228, 22);
+            this.txtStreet.TabIndex = 24;
             // 
-            // textBox9
+            // txtTown
             // 
-            this.textBox9.Location = new System.Drawing.Point(210, 351);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(228, 22);
-            this.textBox9.TabIndex = 25;
+            this.txtTown.Location = new System.Drawing.Point(210, 351);
+            this.txtTown.Name = "txtTown";
+            this.txtTown.Size = new System.Drawing.Size(228, 22);
+            this.txtTown.TabIndex = 25;
             // 
-            // textBox10
+            // txtPostcode
             // 
-            this.textBox10.Location = new System.Drawing.Point(210, 379);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(228, 22);
-            this.textBox10.TabIndex = 26;
+            this.txtPostcode.Location = new System.Drawing.Point(210, 379);
+            this.txtPostcode.Name = "txtPostcode";
+            this.txtPostcode.Size = new System.Drawing.Size(228, 22);
+            this.txtPostcode.TabIndex = 26;
             // 
             // Program
             // 
             this.ClientSize = new System.Drawing.Size(990, 472);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtPostcode);
+            this.Controls.Add(this.txtTown);
+            this.Controls.Add(this.txtStreet);
+            this.Controls.Add(this.txtHouseNumber);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtMachineComplexity);
+            this.Controls.Add(this.txtJobUrgency);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtFaultDescription);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtMachineDescription);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Save);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.Name = "Program";
             this.Text = "Insert Update Delete";
@@ -434,7 +435,7 @@ namespace ORMTest
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            clearText();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -482,6 +483,24 @@ namespace ORMTest
 
         }
 
+        private void clearText()
+        { 
+            txtName.Text = "";
+            txtEmail.Text = ""; 
+            txtMachineDescription.Text = "";
+            txtFaultDescription.Text = "";
+            txtJobUrgency.Text = ""; 
+            txtMachineComplexity.Text = "";
+            txtHouseNumber.Text = ""; 
+            txtStreet.Text = "";
+            txtTown.Text = "";
+            txtPostcode.Text = "";
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }
