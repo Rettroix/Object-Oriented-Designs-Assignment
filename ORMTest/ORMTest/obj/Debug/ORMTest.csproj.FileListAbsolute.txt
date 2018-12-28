@@ -18,3 +18,5 @@ C:\Users\drhoi\Dropbox\_ObjectOrientatedDesign\ORM\ORMTest\ORMTest\bin\Debug\Ent
 C:\Users\drhoi\Dropbox\_ObjectOrientatedDesign\ORM\ORMTest\ORMTest\bin\Debug\EntityFramework.xml
 C:\Users\drhoi\Dropbox\_ObjectOrientatedDesign\ORM\ORMTest\ORMTest\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\drhoi\Dropbox\_ObjectOrientatedDesign\ORM\ORMTest\ORMTest\obj\Debug\ORMTest.csprojResolveAssemblyReference.cache
+C:\Users\Elliot Anderson\Dropbox\_ObjectOrientatedDesign\ORM\ORMTest\ORMTest\obj\Debug\ORMTest.Program.resources
+C:\Users\Elliot Anderson\Dropbox\_ObjectOrientatedDesign\ORM\ORMTest\ORMTest\obj\Debug\ORMTest.csproj.GenerateResource.Cache
