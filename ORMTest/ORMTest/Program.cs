@@ -37,22 +37,26 @@ namespace ORMTest
         private TextBox txtStreet;
         private TextBox txtTown;
         private TextBox txtPostcode;
+        private DataGridView dataGridView2;
+        private DataGridView dataGridView3;
         private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn ClientName;
         private DataGridViewTextBoxColumn Email;
-        private DataGridViewTextBoxColumn MachineDescription;
-        private DataGridViewTextBoxColumn FaultDescription;
-        private DataGridViewTextBoxColumn JobUrgency;
-        private DataGridViewTextBoxColumn MachineComplexity;
-        private DataGridViewTextBoxColumn HouseNumber;
-        private DataGridViewTextBoxColumn Street;
-        private DataGridViewTextBoxColumn Town;
-        private DataGridViewTextBoxColumn Postcode;
+        private DataGridViewTextBoxColumn JobID;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn FactoryID;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private DataGridView dataGridView1;
     
         public Program()
         {
-            testDatabase();
+            //testDatabase();
             InitializeComponent();
         }
 
@@ -66,7 +70,7 @@ namespace ORMTest
         private void testDatabase()
         {
             ClientCompany CodeStompIndustries = new ClientCompany();
-            CodeStompIndustries.Name = "Codestomp Industries";
+            CodeStompIndustries.ClientName = "Codestomp Industries";
             CodeStompIndustries.Email = "CodestompIndustries@gmail.com";
 
             Job CodeStompJob = new Job();
@@ -76,7 +80,7 @@ namespace ORMTest
             CodeStompJob.MachineComplexity = 5;
 
             Address CodeStompFactoryLocation = new Address();
-            CodeStompFactoryLocation.NumberOrName = "54";
+            CodeStompFactoryLocation.HouseNumber = "54";
             CodeStompFactoryLocation.Street = "Stupid Street";
             CodeStompFactoryLocation.Town = "Newcastle";
             CodeStompFactoryLocation.PostCode = "NE11 8FM";
@@ -104,16 +108,16 @@ namespace ORMTest
                 context.SaveChanges();
 
                 var query = from b in context.ClientCompanys
-                            orderby b.Name
+                            orderby b.ClientName
                             select b;
 
                 Console.WriteLine("All Jobs in the database:");
                 foreach (var item in query)
                 {
-                    Console.WriteLine(item.Name);
+                    Console.WriteLine(item.ClientName);
                     Console.WriteLine(item.Email);
                     var queryTwo = from b in item.Jobs
-                                   orderby b.PrimaryKey
+                                   orderby b.JobID
                                    select b;
                     foreach (var itemTwo in queryTwo)
                     {
@@ -163,18 +167,24 @@ namespace ORMTest
             this.txtStreet = new System.Windows.Forms.TextBox();
             this.txtTown = new System.Windows.Forms.TextBox();
             this.txtPostcode = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MachineDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FaultDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JobUrgency = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MachineComplexity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HouseNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Street = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Town = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Postcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JobID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FactoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -182,7 +192,7 @@ namespace ORMTest
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(38, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -191,7 +201,7 @@ namespace ORMTest
             // 
             this.txtName.Location = new System.Drawing.Point(90, 38);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(228, 20);
+            this.txtName.Size = new System.Drawing.Size(228, 22);
             this.txtName.TabIndex = 1;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
@@ -210,21 +220,13 @@ namespace ORMTest
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.Name,
-            this.Email,
-            this.MachineDescription,
-            this.FaultDescription,
-            this.JobUrgency,
-            this.MachineComplexity,
-            this.HouseNumber,
-            this.Street,
-            this.Town,
-            this.Postcode});
+            this.ClientName,
+            this.Email});
             this.dataGridView1.Location = new System.Drawing.Point(483, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(484, 448);
+            this.dataGridView1.Size = new System.Drawing.Size(625, 113);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -232,7 +234,7 @@ namespace ORMTest
             // 
             this.txtEmail.Location = new System.Drawing.Point(90, 66);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(228, 20);
+            this.txtEmail.Size = new System.Drawing.Size(228, 22);
             this.txtEmail.TabIndex = 5;
             this.txtEmail.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -241,7 +243,7 @@ namespace ORMTest
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(38, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.Size = new System.Drawing.Size(42, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Email";
             // 
@@ -249,16 +251,16 @@ namespace ORMTest
             // 
             this.txtMachineDescription.Location = new System.Drawing.Point(186, 126);
             this.txtMachineDescription.Name = "txtMachineDescription";
-            this.txtMachineDescription.Size = new System.Drawing.Size(228, 20);
+            this.txtMachineDescription.Size = new System.Drawing.Size(228, 22);
             this.txtMachineDescription.TabIndex = 7;
             this.txtMachineDescription.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 99);
+            this.label3.Location = new System.Drawing.Point(38, 98);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(38, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "Jobs";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -286,16 +288,16 @@ namespace ORMTest
             // 
             this.txtFaultDescription.Location = new System.Drawing.Point(186, 153);
             this.txtFaultDescription.Name = "txtFaultDescription";
-            this.txtFaultDescription.Size = new System.Drawing.Size(228, 20);
+            this.txtFaultDescription.Size = new System.Drawing.Size(228, 22);
             this.txtFaultDescription.TabIndex = 11;
             this.txtFaultDescription.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 126);
+            this.label4.Location = new System.Drawing.Point(38, 126);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 13);
+            this.label4.Size = new System.Drawing.Size(136, 17);
             this.label4.TabIndex = 10;
             this.label4.Text = "Machine Description";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -305,7 +307,7 @@ namespace ORMTest
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(39, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.Size = new System.Drawing.Size(106, 17);
             this.label5.TabIndex = 12;
             this.label5.Text = "Client Company";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -313,9 +315,9 @@ namespace ORMTest
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 156);
+            this.label6.Location = new System.Drawing.Point(39, 153);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.Size = new System.Drawing.Size(114, 17);
             this.label6.TabIndex = 13;
             this.label6.Text = "Fault Description";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -323,18 +325,18 @@ namespace ORMTest
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(44, 185);
+            this.label7.Location = new System.Drawing.Point(38, 185);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.Size = new System.Drawing.Size(88, 17);
             this.label7.TabIndex = 14;
             this.label7.Text = "Job Urgency";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(44, 216);
+            this.label8.Location = new System.Drawing.Point(38, 216);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 13);
+            this.label8.Size = new System.Drawing.Size(132, 17);
             this.label8.TabIndex = 15;
             this.label8.Text = "Machine Complexity";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -343,7 +345,7 @@ namespace ORMTest
             // 
             this.txtJobUrgency.Location = new System.Drawing.Point(186, 185);
             this.txtJobUrgency.Name = "txtJobUrgency";
-            this.txtJobUrgency.Size = new System.Drawing.Size(228, 20);
+            this.txtJobUrgency.Size = new System.Drawing.Size(228, 22);
             this.txtJobUrgency.TabIndex = 16;
             this.txtJobUrgency.TextChanged += new System.EventHandler(this.txtJobUrgency_TextChanged);
             // 
@@ -351,7 +353,7 @@ namespace ORMTest
             // 
             this.txtMachineComplexity.Location = new System.Drawing.Point(186, 216);
             this.txtMachineComplexity.Name = "txtMachineComplexity";
-            this.txtMachineComplexity.Size = new System.Drawing.Size(228, 20);
+            this.txtMachineComplexity.Size = new System.Drawing.Size(228, 22);
             this.txtMachineComplexity.TabIndex = 17;
             this.txtMachineComplexity.TextChanged += new System.EventHandler(this.txtMachineComplexity_TextChanged);
             // 
@@ -360,7 +362,7 @@ namespace ORMTest
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(44, 265);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 13);
+            this.label9.Size = new System.Drawing.Size(113, 17);
             this.label9.TabIndex = 18;
             this.label9.Text = "Factory Location";
             // 
@@ -369,7 +371,7 @@ namespace ORMTest
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(43, 295);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(121, 13);
+            this.label10.Size = new System.Drawing.Size(161, 17);
             this.label10.TabIndex = 19;
             this.label10.Text = "House Number or Name";
             // 
@@ -378,7 +380,7 @@ namespace ORMTest
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(44, 322);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(35, 13);
+            this.label11.Size = new System.Drawing.Size(46, 17);
             this.label11.TabIndex = 20;
             this.label11.Text = "Street";
             // 
@@ -387,7 +389,7 @@ namespace ORMTest
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(43, 351);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(34, 13);
+            this.label12.Size = new System.Drawing.Size(42, 17);
             this.label12.TabIndex = 21;
             this.label12.Text = "Town";
             // 
@@ -396,7 +398,7 @@ namespace ORMTest
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(44, 379);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 13);
+            this.label13.Size = new System.Drawing.Size(67, 17);
             this.label13.TabIndex = 22;
             this.label13.Text = "Postcode";
             // 
@@ -404,14 +406,14 @@ namespace ORMTest
             // 
             this.txtHouseNumber.Location = new System.Drawing.Point(210, 295);
             this.txtHouseNumber.Name = "txtHouseNumber";
-            this.txtHouseNumber.Size = new System.Drawing.Size(228, 20);
+            this.txtHouseNumber.Size = new System.Drawing.Size(228, 22);
             this.txtHouseNumber.TabIndex = 23;
             // 
             // txtStreet
             // 
             this.txtStreet.Location = new System.Drawing.Point(210, 323);
             this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Size = new System.Drawing.Size(228, 20);
+            this.txtStreet.Size = new System.Drawing.Size(228, 22);
             this.txtStreet.TabIndex = 24;
             this.txtStreet.TextChanged += new System.EventHandler(this.txtStreet_TextChanged);
             // 
@@ -419,7 +421,7 @@ namespace ORMTest
             // 
             this.txtTown.Location = new System.Drawing.Point(210, 351);
             this.txtTown.Name = "txtTown";
-            this.txtTown.Size = new System.Drawing.Size(228, 20);
+            this.txtTown.Size = new System.Drawing.Size(228, 22);
             this.txtTown.TabIndex = 25;
             this.txtTown.TextChanged += new System.EventHandler(this.txtTown_TextChanged);
             // 
@@ -427,22 +429,54 @@ namespace ORMTest
             // 
             this.txtPostcode.Location = new System.Drawing.Point(210, 379);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(228, 20);
+            this.txtPostcode.Size = new System.Drawing.Size(228, 22);
             this.txtPostcode.TabIndex = 26;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.JobID,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.dataGridView2.Location = new System.Drawing.Point(483, 145);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(625, 148);
+            this.dataGridView2.TabIndex = 27;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FactoryID,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22});
+            this.dataGridView3.Location = new System.Drawing.Point(483, 315);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(625, 167);
+            this.dataGridView3.TabIndex = 28;
             // 
             // ID
             // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
+            this.ID.DataPropertyName = "ClientID";
+            this.ID.HeaderText = "ClientID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             // 
-            // Name
+            // ClientName
             // 
-            this.Name.DataPropertyName = "Name";
-            this.Name.HeaderText = "Name";
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
+            this.ClientName.DataPropertyName = "ClientName";
+            this.ClientName.HeaderText = "ClientName";
+            this.ClientName.Name = "ClientName";
+            this.ClientName.ReadOnly = true;
             // 
             // Email
             // 
@@ -451,65 +485,81 @@ namespace ORMTest
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
             // 
-            // MachineDescription
+            // JobID
             // 
-            this.MachineDescription.DataPropertyName = "MachineDescription";
-            this.MachineDescription.HeaderText = "MachineDescription";
-            this.MachineDescription.Name = "MachineDescription";
-            this.MachineDescription.ReadOnly = true;
+            this.JobID.DataPropertyName = "JobID";
+            this.JobID.HeaderText = "JobID";
+            this.JobID.Name = "JobID";
+            this.JobID.ReadOnly = true;
             // 
-            // FaultDescription
+            // dataGridViewTextBoxColumn4
             // 
-            this.FaultDescription.DataPropertyName = "FaultDescription";
-            this.FaultDescription.HeaderText = "FaultDescription";
-            this.FaultDescription.Name = "FaultDescription";
-            this.FaultDescription.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "MachineDescription";
+            this.dataGridViewTextBoxColumn4.HeaderText = "MachineDescription";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // JobUrgency
+            // dataGridViewTextBoxColumn5
             // 
-            this.JobUrgency.DataPropertyName = "JobUrgency";
-            this.JobUrgency.HeaderText = "JobUrgency";
-            this.JobUrgency.Name = "JobUrgency";
-            this.JobUrgency.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "FaultDescription";
+            this.dataGridViewTextBoxColumn5.HeaderText = "FaultDescription";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // MachineComplexity
+            // dataGridViewTextBoxColumn6
             // 
-            this.MachineComplexity.DataPropertyName = "MachineComplexity";
-            this.MachineComplexity.HeaderText = "MachineComplexity";
-            this.MachineComplexity.Name = "MachineComplexity";
-            this.MachineComplexity.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "JobUrgency";
+            this.dataGridViewTextBoxColumn6.HeaderText = "JobUrgency";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
-            // HouseNumber
+            // dataGridViewTextBoxColumn7
             // 
-            this.HouseNumber.DataPropertyName = "HouseNumber";
-            this.HouseNumber.HeaderText = "HouseNumber";
-            this.HouseNumber.Name = "HouseNumber";
-            this.HouseNumber.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "MachineComplexity";
+            this.dataGridViewTextBoxColumn7.HeaderText = "MachineComplexity";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // Street
+            // FactoryID
             // 
-            this.Street.DataPropertyName = "Street";
-            this.Street.HeaderText = "Street";
-            this.Street.Name = "Street";
-            this.Street.ReadOnly = true;
+            this.FactoryID.DataPropertyName = "FactoryID";
+            this.FactoryID.HeaderText = "FactoryID";
+            this.FactoryID.Name = "FactoryID";
+            this.FactoryID.ReadOnly = true;
             // 
-            // Town
+            // dataGridViewTextBoxColumn19
             // 
-            this.Town.DataPropertyName = "Town";
-            this.Town.HeaderText = "Town";
-            this.Town.Name = "Town";
-            this.Town.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "HouseNumber";
+            this.dataGridViewTextBoxColumn19.HeaderText = "HouseNumber";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
             // 
-            // Postcode
+            // dataGridViewTextBoxColumn20
             // 
-            this.Postcode.DataPropertyName = "Postcode";
-            this.Postcode.HeaderText = "Postcode";
-            this.Postcode.Name = "Postcode";
-            this.Postcode.ReadOnly = true;
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "Street";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Street";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "Town";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Town";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Postcode";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Postcode";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.ReadOnly = true;
             // 
             // Program
             // 
-            this.ClientSize = new System.Drawing.Size(990, 472);
+            this.ClientSize = new System.Drawing.Size(1120, 494);
+            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.txtPostcode);
             this.Controls.Add(this.txtTown);
             this.Controls.Add(this.txtStreet);
@@ -541,6 +591,8 @@ namespace ORMTest
             this.Text = "Insert Update Delete";
             this.Load += new System.EventHandler(this.Program_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -570,7 +622,7 @@ namespace ORMTest
         {
 
             ClientCompany CodeStompIndustries = new ClientCompany();
-            CodeStompIndustries.Name = txtName.Text.Trim();
+            CodeStompIndustries.ClientName = txtName.Text.Trim();
             CodeStompIndustries.Email = txtEmail.Text.Trim();
 
             Job CodeStompJob = new Job();
@@ -580,7 +632,7 @@ namespace ORMTest
             CodeStompJob.MachineComplexity = Convert.ToInt32(txtMachineComplexity.Text.Trim()); 
 
             Address CodeStompFactoryLocation = new Address();
-            CodeStompFactoryLocation.NumberOrName = txtHouseNumber.Text.Trim();
+            CodeStompFactoryLocation.HouseNumber = txtHouseNumber.Text.Trim();
             CodeStompFactoryLocation.Street = txtStreet.Text.Trim();
             CodeStompFactoryLocation.Town = txtTown.Text.Trim();
             CodeStompFactoryLocation.PostCode = txtPostcode.Text.Trim();
@@ -642,6 +694,7 @@ namespace ORMTest
             txtStreet.Text = "";
             txtTown.Text = "";
             txtPostcode.Text = "";
+            PopulateDataGridView();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -679,6 +732,17 @@ namespace ORMTest
 
         }
 
+        void PopulateDataGridView()
+        {
+            dataGridView1.AutoGenerateColumns = false;
+            using (var context = new UniDBContext())
+            {
+                dataGridView1.DataSource = context.ClientCompanys.ToList<ClientCompany>();
+                dataGridView2.DataSource = context.Jobs.ToList<Job>();
+                dataGridView3.DataSource = context.Addresses.ToList<Address>();
+
+            }
+        }
     }
 }
 

@@ -10,8 +10,8 @@ namespace ORMTest
     public class Address
     {
         [Key]
-        public int PrimaryKey { get; set;}
-        public String NumberOrName { get; set; }
+        public int FactoryID { get; set;}
+        public String HouseNumber { get; set; }
         public String Street { get; set; }
         public String Town { get; set; }
         public String PostCode { get; set; }

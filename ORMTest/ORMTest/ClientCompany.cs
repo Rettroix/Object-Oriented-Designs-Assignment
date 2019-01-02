@@ -16,9 +16,9 @@ namespace ORMTest
         }
 
         [Key]
-        public int PrimaryKey { get; set; }
+        public int ClientID { get; set; }
         [MinLength(3), MaxLength(30)]
-        public string Name { get; set; }
+        public string ClientName { get; set; }
         public string Email { get; set; }
         public List<Job> Jobs { get; set; }
 

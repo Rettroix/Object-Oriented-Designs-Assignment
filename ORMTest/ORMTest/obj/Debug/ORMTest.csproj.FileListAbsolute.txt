@@ -35,3 +35,15 @@ C:\Users\drhoi\Documents\_BitBucket\Object-Oriented-Designs-Assignment\ORMTest\O
 C:\Users\drhoi\Documents\_BitBucket\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\obj\Debug\ORMTest.csprojResolveAssemblyReference.cache
 C:\Users\drhoi\Documents\_BitBucket\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\obj\Debug\ORMTest.Program.resources
 C:\Users\drhoi\Documents\_BitBucket\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\obj\Debug\ORMTest.csproj.GenerateResource.Cache
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\bin\Debug\ORMTest.exe.config
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\obj\Debug\ORMTest.exe
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\obj\Debug\ORMTest.pdb
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\obj\Debug\ORMTest.csprojResolveAssemblyReference.cache
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\obj\Debug\ORMTest.Program.resources
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\obj\Debug\ORMTest.csproj.GenerateResource.Cache
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\bin\Debug\ORMTest.exe
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\bin\Debug\ORMTest.pdb
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\bin\Debug\EntityFramework.dll
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\bin\Debug\EntityFramework.SqlServer.dll
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\bin\Debug\EntityFramework.xml
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\ORMTest\bin\Debug\EntityFramework.SqlServer.xml

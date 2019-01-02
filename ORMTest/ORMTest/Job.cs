@@ -16,13 +16,14 @@ namespace ORMTest
         }
 
         [Key]
-        public int PrimaryKey { get; set; }
+        public int JobID { get; set; }
         [Required]
         public String MachineDescription { get; set; }
         [Required]
         public String FaultDescription { get; set; }
-        public List<Address> FactoryLocation { get; set; }
         public int JobUrgency { get; set; }
         public int MachineComplexity { get; set; }
+
+        public List<Address> FactoryLocation { get; set; }
     }
 }

@@ -1,0 +1,6 @@
+Domain
+-Model
+==All business logic
+Presentation
+-View and presenter
+==All the winform
