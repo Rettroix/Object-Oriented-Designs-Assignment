@@ -1,0 +1,5 @@
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Model\bin\Debug\Model.dll
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Model\bin\Debug\Model.pdb
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Model\obj\Debug\Model.dll
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Model\obj\Debug\Model.pdb

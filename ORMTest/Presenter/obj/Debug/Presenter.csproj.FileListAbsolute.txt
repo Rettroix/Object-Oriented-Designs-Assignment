@@ -1,0 +1,14 @@
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\bin\Debug\ORMTest.exe.config
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\obj\Debug\ORMTest.exe
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\obj\Debug\ORMTest.pdb
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\bin\Debug\ORMTest.exe
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\bin\Debug\ORMTest.pdb
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\bin\Debug\EntityFramework.dll
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\bin\Debug\EntityFramework.SqlServer.dll
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\bin\Debug\Model.dll
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\bin\Debug\Model.pdb
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\bin\Debug\EntityFramework.xml
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\bin\Debug\EntityFramework.SqlServer.xml
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\obj\Debug\Presenter.csprojResolveAssemblyReference.cache
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\obj\Debug\Presenter.Program.resources
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\obj\Debug\Presenter.csproj.GenerateResource.Cache
