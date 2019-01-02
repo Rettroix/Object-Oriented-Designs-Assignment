@@ -39,9 +39,6 @@ namespace Presenter
         private TextBox txtPostcode;
         private DataGridView dataGridView2;
         private DataGridView dataGridView3;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn ClientName;
-        private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn JobID;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
@@ -52,12 +49,17 @@ namespace Presenter
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn ClientName;
+        private DataGridViewTextBoxColumn Email;
+        private DataGridViewTextBoxColumn AvailableJobs;
         private DataGridView dataGridView1;
     
         public Program()
         {
             //testDatabase();
             InitializeComponent();
+            PopulateDataGridView();
         }
 
         private static void Main()
@@ -168,20 +170,21 @@ namespace Presenter
             this.txtTown = new System.Windows.Forms.TextBox();
             this.txtPostcode = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.FactoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AvailableJobs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -221,13 +224,15 @@ namespace Presenter
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.ClientName,
-            this.Email});
+            this.Email,
+            this.AvailableJobs});
             this.dataGridView1.Location = new System.Drawing.Point(483, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(625, 113);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txtEmail
@@ -448,43 +453,6 @@ namespace Presenter
             this.dataGridView2.Size = new System.Drawing.Size(625, 148);
             this.dataGridView2.TabIndex = 27;
             // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FactoryID,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22});
-            this.dataGridView3.Location = new System.Drawing.Point(483, 315);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(625, 167);
-            this.dataGridView3.TabIndex = 28;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ClientID";
-            this.ID.HeaderText = "ClientID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // ClientName
-            // 
-            this.ClientName.DataPropertyName = "ClientName";
-            this.ClientName.HeaderText = "ClientName";
-            this.ClientName.Name = "ClientName";
-            this.ClientName.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
             // JobID
             // 
             this.JobID.DataPropertyName = "JobID";
@@ -520,6 +488,22 @@ namespace Presenter
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FactoryID,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22});
+            this.dataGridView3.Location = new System.Drawing.Point(483, 315);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(625, 167);
+            this.dataGridView3.TabIndex = 28;
+            // 
             // FactoryID
             // 
             this.FactoryID.DataPropertyName = "FactoryID";
@@ -554,6 +538,34 @@ namespace Presenter
             this.dataGridViewTextBoxColumn22.HeaderText = "Postcode";
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ClientID";
+            this.ID.HeaderText = "ClientID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // ClientName
+            // 
+            this.ClientName.DataPropertyName = "ClientName";
+            this.ClientName.HeaderText = "ClientName";
+            this.ClientName.Name = "ClientName";
+            this.ClientName.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // AvailableJobs
+            // 
+            this.AvailableJobs.DataPropertyName = "AvailableJobs";
+            this.AvailableJobs.HeaderText = "AvailableJobs";
+            this.AvailableJobs.Name = "AvailableJobs";
+            this.AvailableJobs.ReadOnly = true;
             // 
             // Program
             // 
@@ -741,6 +753,20 @@ namespace Presenter
                 dataGridView2.DataSource = context.Jobs.ToList<Job>();
                 dataGridView3.DataSource = context.Addresses.ToList<Address>();
 
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if(dataGridView1.Columns["AvailableJobs"].Selected)
+            //{
+            //    Console.WriteLine("clicked available jobs");
+            //}
+
+
+            if(e.ColumnIndex.Equals(dataGridView1.Columns["AvailableJobs"].Index))
+            {
+                Console.WriteLine(String.Format("Row{0}, Col {1}", e.RowIndex, e.ColumnIndex));
             }
         }
     }
