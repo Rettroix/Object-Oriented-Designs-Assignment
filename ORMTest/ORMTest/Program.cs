@@ -13,7 +13,7 @@ namespace ORMTest
     {
         private Label label1;
         private TextBox txtName;
-        private Button Save;
+        private Button btnSave;
         private TextBox txtEmail;
         private Label label2;
         private TextBox txtMachineDescription;
@@ -37,6 +37,17 @@ namespace ORMTest
         private TextBox txtStreet;
         private TextBox txtTown;
         private TextBox txtPostcode;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn Email;
+        private DataGridViewTextBoxColumn MachineDescription;
+        private DataGridViewTextBoxColumn FaultDescription;
+        private DataGridViewTextBoxColumn JobUrgency;
+        private DataGridViewTextBoxColumn MachineComplexity;
+        private DataGridViewTextBoxColumn HouseNumber;
+        private DataGridViewTextBoxColumn Street;
+        private DataGridViewTextBoxColumn Town;
+        private DataGridViewTextBoxColumn Postcode;
         private DataGridView dataGridView1;
     
         public Program()
@@ -127,7 +138,7 @@ namespace ORMTest
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.Save = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -152,6 +163,17 @@ namespace ORMTest
             this.txtStreet = new System.Windows.Forms.TextBox();
             this.txtTown = new System.Windows.Forms.TextBox();
             this.txtPostcode = new System.Windows.Forms.TextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MachineDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FaultDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JobUrgency = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MachineComplexity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HouseNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Street = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Town = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Postcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,7 +182,7 @@ namespace ORMTest
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(38, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -169,33 +191,48 @@ namespace ORMTest
             // 
             this.txtName.Location = new System.Drawing.Point(90, 38);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(228, 22);
+            this.txtName.Size = new System.Drawing.Size(228, 20);
             this.txtName.TabIndex = 1;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
-            // Save
+            // btnSave
             // 
-            this.Save.Location = new System.Drawing.Point(56, 437);
-            this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(75, 23);
-            this.Save.TabIndex = 2;
-            this.Save.Text = "Save";
-            this.Save.UseVisualStyleBackColor = true;
-            this.Save.Click += new System.EventHandler(this.button1_Click);
+            this.btnSave.Location = new System.Drawing.Point(56, 437);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Name,
+            this.Email,
+            this.MachineDescription,
+            this.FaultDescription,
+            this.JobUrgency,
+            this.MachineComplexity,
+            this.HouseNumber,
+            this.Street,
+            this.Town,
+            this.Postcode});
             this.dataGridView1.Location = new System.Drawing.Point(483, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(484, 448);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(90, 66);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(228, 22);
+            this.txtEmail.Size = new System.Drawing.Size(228, 20);
             this.txtEmail.TabIndex = 5;
             this.txtEmail.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -204,7 +241,7 @@ namespace ORMTest
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(38, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 17);
+            this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Email";
             // 
@@ -212,7 +249,7 @@ namespace ORMTest
             // 
             this.txtMachineDescription.Location = new System.Drawing.Point(186, 126);
             this.txtMachineDescription.Name = "txtMachineDescription";
-            this.txtMachineDescription.Size = new System.Drawing.Size(228, 22);
+            this.txtMachineDescription.Size = new System.Drawing.Size(228, 20);
             this.txtMachineDescription.TabIndex = 7;
             this.txtMachineDescription.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -221,7 +258,7 @@ namespace ORMTest
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(43, 99);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 17);
+            this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Jobs";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -249,7 +286,7 @@ namespace ORMTest
             // 
             this.txtFaultDescription.Location = new System.Drawing.Point(186, 153);
             this.txtFaultDescription.Name = "txtFaultDescription";
-            this.txtFaultDescription.Size = new System.Drawing.Size(228, 22);
+            this.txtFaultDescription.Size = new System.Drawing.Size(228, 20);
             this.txtFaultDescription.TabIndex = 11;
             this.txtFaultDescription.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -258,7 +295,7 @@ namespace ORMTest
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(44, 126);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 17);
+            this.label4.Size = new System.Drawing.Size(104, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "Machine Description";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -268,7 +305,7 @@ namespace ORMTest
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(39, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 17);
+            this.label5.Size = new System.Drawing.Size(80, 13);
             this.label5.TabIndex = 12;
             this.label5.Text = "Client Company";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -278,7 +315,7 @@ namespace ORMTest
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(43, 156);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 17);
+            this.label6.Size = new System.Drawing.Size(86, 13);
             this.label6.TabIndex = 13;
             this.label6.Text = "Fault Description";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -288,7 +325,7 @@ namespace ORMTest
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(44, 185);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 17);
+            this.label7.Size = new System.Drawing.Size(67, 13);
             this.label7.TabIndex = 14;
             this.label7.Text = "Job Urgency";
             // 
@@ -297,7 +334,7 @@ namespace ORMTest
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(44, 216);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 17);
+            this.label8.Size = new System.Drawing.Size(101, 13);
             this.label8.TabIndex = 15;
             this.label8.Text = "Machine Complexity";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -306,22 +343,24 @@ namespace ORMTest
             // 
             this.txtJobUrgency.Location = new System.Drawing.Point(186, 185);
             this.txtJobUrgency.Name = "txtJobUrgency";
-            this.txtJobUrgency.Size = new System.Drawing.Size(228, 22);
+            this.txtJobUrgency.Size = new System.Drawing.Size(228, 20);
             this.txtJobUrgency.TabIndex = 16;
+            this.txtJobUrgency.TextChanged += new System.EventHandler(this.txtJobUrgency_TextChanged);
             // 
             // txtMachineComplexity
             // 
             this.txtMachineComplexity.Location = new System.Drawing.Point(186, 216);
             this.txtMachineComplexity.Name = "txtMachineComplexity";
-            this.txtMachineComplexity.Size = new System.Drawing.Size(228, 22);
+            this.txtMachineComplexity.Size = new System.Drawing.Size(228, 20);
             this.txtMachineComplexity.TabIndex = 17;
+            this.txtMachineComplexity.TextChanged += new System.EventHandler(this.txtMachineComplexity_TextChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(44, 265);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 17);
+            this.label9.Size = new System.Drawing.Size(86, 13);
             this.label9.TabIndex = 18;
             this.label9.Text = "Factory Location";
             // 
@@ -330,7 +369,7 @@ namespace ORMTest
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(43, 295);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(161, 17);
+            this.label10.Size = new System.Drawing.Size(121, 13);
             this.label10.TabIndex = 19;
             this.label10.Text = "House Number or Name";
             // 
@@ -339,7 +378,7 @@ namespace ORMTest
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(44, 322);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 17);
+            this.label11.Size = new System.Drawing.Size(35, 13);
             this.label11.TabIndex = 20;
             this.label11.Text = "Street";
             // 
@@ -348,7 +387,7 @@ namespace ORMTest
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(43, 351);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 17);
+            this.label12.Size = new System.Drawing.Size(34, 13);
             this.label12.TabIndex = 21;
             this.label12.Text = "Town";
             // 
@@ -357,7 +396,7 @@ namespace ORMTest
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(44, 379);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 17);
+            this.label13.Size = new System.Drawing.Size(52, 13);
             this.label13.TabIndex = 22;
             this.label13.Text = "Postcode";
             // 
@@ -365,29 +404,108 @@ namespace ORMTest
             // 
             this.txtHouseNumber.Location = new System.Drawing.Point(210, 295);
             this.txtHouseNumber.Name = "txtHouseNumber";
-            this.txtHouseNumber.Size = new System.Drawing.Size(228, 22);
+            this.txtHouseNumber.Size = new System.Drawing.Size(228, 20);
             this.txtHouseNumber.TabIndex = 23;
             // 
             // txtStreet
             // 
             this.txtStreet.Location = new System.Drawing.Point(210, 323);
             this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Size = new System.Drawing.Size(228, 22);
+            this.txtStreet.Size = new System.Drawing.Size(228, 20);
             this.txtStreet.TabIndex = 24;
+            this.txtStreet.TextChanged += new System.EventHandler(this.txtStreet_TextChanged);
             // 
             // txtTown
             // 
             this.txtTown.Location = new System.Drawing.Point(210, 351);
             this.txtTown.Name = "txtTown";
-            this.txtTown.Size = new System.Drawing.Size(228, 22);
+            this.txtTown.Size = new System.Drawing.Size(228, 20);
             this.txtTown.TabIndex = 25;
+            this.txtTown.TextChanged += new System.EventHandler(this.txtTown_TextChanged);
             // 
             // txtPostcode
             // 
             this.txtPostcode.Location = new System.Drawing.Point(210, 379);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(228, 22);
+            this.txtPostcode.Size = new System.Drawing.Size(228, 20);
             this.txtPostcode.TabIndex = 26;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Name
+            // 
+            this.Name.DataPropertyName = "Name";
+            this.Name.HeaderText = "Name";
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // MachineDescription
+            // 
+            this.MachineDescription.DataPropertyName = "MachineDescription";
+            this.MachineDescription.HeaderText = "MachineDescription";
+            this.MachineDescription.Name = "MachineDescription";
+            this.MachineDescription.ReadOnly = true;
+            // 
+            // FaultDescription
+            // 
+            this.FaultDescription.DataPropertyName = "FaultDescription";
+            this.FaultDescription.HeaderText = "FaultDescription";
+            this.FaultDescription.Name = "FaultDescription";
+            this.FaultDescription.ReadOnly = true;
+            // 
+            // JobUrgency
+            // 
+            this.JobUrgency.DataPropertyName = "JobUrgency";
+            this.JobUrgency.HeaderText = "JobUrgency";
+            this.JobUrgency.Name = "JobUrgency";
+            this.JobUrgency.ReadOnly = true;
+            // 
+            // MachineComplexity
+            // 
+            this.MachineComplexity.DataPropertyName = "MachineComplexity";
+            this.MachineComplexity.HeaderText = "MachineComplexity";
+            this.MachineComplexity.Name = "MachineComplexity";
+            this.MachineComplexity.ReadOnly = true;
+            // 
+            // HouseNumber
+            // 
+            this.HouseNumber.DataPropertyName = "HouseNumber";
+            this.HouseNumber.HeaderText = "HouseNumber";
+            this.HouseNumber.Name = "HouseNumber";
+            this.HouseNumber.ReadOnly = true;
+            // 
+            // Street
+            // 
+            this.Street.DataPropertyName = "Street";
+            this.Street.HeaderText = "Street";
+            this.Street.Name = "Street";
+            this.Street.ReadOnly = true;
+            // 
+            // Town
+            // 
+            this.Town.DataPropertyName = "Town";
+            this.Town.HeaderText = "Town";
+            this.Town.Name = "Town";
+            this.Town.ReadOnly = true;
+            // 
+            // Postcode
+            // 
+            this.Postcode.DataPropertyName = "Postcode";
+            this.Postcode.HeaderText = "Postcode";
+            this.Postcode.Name = "Postcode";
+            this.Postcode.ReadOnly = true;
             // 
             // Program
             // 
@@ -416,7 +534,7 @@ namespace ORMTest
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.Save);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.Name = "Program";
@@ -450,6 +568,35 @@ namespace ORMTest
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            ClientCompany CodeStompIndustries = new ClientCompany();
+            CodeStompIndustries.Name = txtName.Text.Trim();
+            CodeStompIndustries.Email = txtEmail.Text.Trim();
+
+            Job CodeStompJob = new Job();
+            CodeStompJob.MachineDescription = txtMachineDescription.Text.Trim();
+            CodeStompJob.FaultDescription = txtFaultDescription.Text.Trim();
+            CodeStompJob.JobUrgency = Convert.ToInt32(txtJobUrgency.Text.Trim());
+            CodeStompJob.MachineComplexity = Convert.ToInt32(txtMachineComplexity.Text.Trim()); 
+
+            Address CodeStompFactoryLocation = new Address();
+            CodeStompFactoryLocation.NumberOrName = txtHouseNumber.Text.Trim();
+            CodeStompFactoryLocation.Street = txtStreet.Text.Trim();
+            CodeStompFactoryLocation.Town = txtTown.Text.Trim();
+            CodeStompFactoryLocation.PostCode = txtPostcode.Text.Trim();
+
+            CodeStompJob.FactoryLocation.Add(CodeStompFactoryLocation);
+            CodeStompIndustries.Jobs.Add(CodeStompJob);
+
+            using (var context = new UniDBContext())
+            {
+                CodeStompJob.FactoryLocation.Add(CodeStompFactoryLocation);
+                CodeStompIndustries.Jobs.Add(CodeStompJob);
+                context.ClientCompanys.Add(CodeStompIndustries);
+                context.SaveChanges();
+            }
+            clearText();
+            MessageBox.Show("Submitted Successfully");
 
         }
 
@@ -498,6 +645,36 @@ namespace ORMTest
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtJobUrgency_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMachineComplexity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtStreet_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTown_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
