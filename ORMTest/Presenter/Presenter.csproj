@@ -56,9 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
-    <Compile Include="ClientCompany.cs" />
-    <Compile Include="Job.cs" />
+    <Compile Include="JobViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobViewer.Designer.cs">
+      <DependentUpon>JobViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs">
       <SubType>Form</SubType>
@@ -71,6 +74,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="JobViewer.resx">
+      <DependentUpon>JobViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Program.resx">
       <DependentUpon>Program.cs</DependentUpon>
     </EmbeddedResource>

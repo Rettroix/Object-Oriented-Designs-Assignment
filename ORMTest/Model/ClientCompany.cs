@@ -20,7 +20,8 @@ namespace Model
         [MinLength(3), MaxLength(30)]
         public string ClientName { get; set; }
         public string Email { get; set; }
-        public List<Job> Jobs { get; set; }
+        //[ForeignKey("StandardRefId")]
+        public virtual ICollection<Job> Jobs { get; set; }
 
 
     }

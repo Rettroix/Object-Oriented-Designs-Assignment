@@ -3,6 +3,7 @@ namespace Presenter
     using System;
     using System.Data.Entity;
     using System.Linq;
+    using Model;
 
     public partial class UniDBContext: DbContext
     {
