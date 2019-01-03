@@ -575,11 +575,9 @@ namespace Presenter
                                 select b;
 
                     Console.WriteLine("All Jobs in the database:");
-                    Console.WriteLine(query.ToList()[e.RowIndex].Jobs.ToList()
-                                        [0].MachineDescription);
-                    JobViewer jobView = new JobViewer();
-                    jobView.jobsToView(e.RowIndex);
-                    jobView.Show();
+                    //Console.WriteLine(query.ToList()[e.RowIndex].Jobs.ToList()
+                    //                    [0].MachineDescription);
+                    JobViewerPresenter jobViewPresenter = new JobViewerPresenter(e.RowIndex);
 
                 }
                 Console.WriteLine(String.Format("Row{0}, Col {1}",

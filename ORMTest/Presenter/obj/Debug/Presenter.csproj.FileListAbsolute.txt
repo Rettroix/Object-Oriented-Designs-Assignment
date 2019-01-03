@@ -43,3 +43,5 @@ C:\Users\Graham\Documents\GitHub\Object-Oriented-Designs-Assignment\ORMTest\Pres
 C:\Users\Graham\Documents\GitHub\Object-Oriented-Designs-Assignment\ORMTest\Presenter\obj\Debug\Presenter.Program.resources
 C:\Users\Graham\Documents\GitHub\Object-Oriented-Designs-Assignment\ORMTest\Presenter\obj\Debug\Presenter.UserLogin.resources
 C:\Users\Graham\Documents\GitHub\Object-Oriented-Designs-Assignment\ORMTest\Presenter\obj\Debug\Presenter.csproj.GenerateResource.Cache
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\obj\Debug\Presenter.JobViewer.resources
+D:\_Github\Object-Oriented-Designs-Assignment\ORMTest\Presenter\obj\Debug\Presenter.UserLogin.resources

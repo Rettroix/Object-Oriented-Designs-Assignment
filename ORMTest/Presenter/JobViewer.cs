@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Model;
 namespace Presenter
 {
-    public partial class JobViewer : Form
+    public partial class JobViewer : Form, IJobviewer
     {
         public int jobsIndex;
-        public JobViewer()
+        private JobViewerPresenter jobViewerPresenterInstance;
+        public JobViewer(JobViewerPresenter tjobViewerPresenter)
         {
             InitializeComponent();
+            jobViewerPresenterInstance = tjobViewerPresenter;
         }
 
         public void jobsToView(int t_jobsIndex)
@@ -32,19 +33,12 @@ namespace Presenter
 
         }
 
-        void PopulateDataGridView()
+        public void PopulateDataGridView()
         {
-            using (var context = new UniDBContext())
-            {
-                var query = from b in context.ClientCompanys
-                            orderby b.ClientID
-                            select b;
 
-                JobViewGrid.AutoGenerateColumns = false;
+            JobViewGrid.AutoGenerateColumns = false;
+            JobViewGrid.DataSource = jobViewerPresenterInstance.GetListOfJobs();
 
-                JobViewGrid.DataSource = query.ToList()[jobsIndex].Jobs.ToList();
-
-            }
         }
 
         private void txtMachineDescription_TextChanged(object sender,
@@ -53,7 +47,7 @@ namespace Presenter
 
         }
 
-        private void clearText()
+        public void clearText()
         {
 
             txtMachineDescription.Text = "";
@@ -70,36 +64,49 @@ namespace Presenter
         private void btnSave_Click(object sender,
                                    EventArgs e)
         {
-            Job CodeStompJob = new Job();
-            CodeStompJob.MachineDescription = txtMachineDescription.Text.Trim();
-            CodeStompJob.FaultDescription = txtFaultDescription.Text.Trim();
-            CodeStompJob.JobUrgency = Convert.ToInt32(txtJobUrgency.Text.Trim());
-            CodeStompJob.MachineComplexity = Convert.ToInt32(txtMachineComplexity.Text.Trim());
-
-            Address CodeStompFactoryLocation = new Address();
-            CodeStompFactoryLocation.HouseNumber = txtHouseNumber.Text.Trim();
-            CodeStompFactoryLocation.Street = txtStreet.Text.Trim();
-            CodeStompFactoryLocation.Town = txtTown.Text.Trim();
-            CodeStompFactoryLocation.PostCode = txtPostcode.Text.Trim();
-
-            CodeStompJob.FactoryLocation.Add(CodeStompFactoryLocation);
-
-            using (var context = new UniDBContext())
-            {
-
-                var query = from b in context.ClientCompanys
-                            orderby b.ClientID
-                            select b;
-
-
-                CodeStompJob.FactoryLocation.Add(CodeStompFactoryLocation);
-                query.ToList()[jobsIndex].Jobs.Add(CodeStompJob);
-                context.SaveChanges();
-            }
+            jobViewerPresenterInstance.SaveClick();
             clearText();
             MessageBox.Show("Submitted Successfully");
         }
 
+        public string GetTxtMachineDescription()
+        {
+            return txtMachineDescription.Text.Trim();
+        }
 
+        public string GetTxtFaultDescription()
+        {
+            return txtFaultDescription.Text.Trim();
+        }
+
+        public string GetTxtJobUrgency()
+        {
+            return txtJobUrgency.Text.Trim();
+        }
+
+        public string GetTxtMachineComplexity()
+        {
+            return txtMachineComplexity.Text.Trim();
+        }
+
+        public string GetTxtHouseNumber()
+        {
+            return txtHouseNumber.Text.Trim();
+        }
+
+        public string GetTxtStreet()
+        {
+            return txtStreet.Text.Trim();
+        }
+
+        public string GetTxtTown()
+        {
+            return txtTown.Text.Trim();
+        }
+
+        public string GetTxtPostcode()
+        {
+            return txtPostcode.Text.Trim();
+        }
     }
 }
