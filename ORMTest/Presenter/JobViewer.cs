@@ -26,7 +26,8 @@ namespace Presenter
 
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView2_CellContentClick(object sender,
+                                                    DataGridViewCellEventArgs e)
         {
 
         }
@@ -46,7 +47,8 @@ namespace Presenter
             }
         }
 
-        private void txtMachineDescription_TextChanged(object sender, EventArgs e)
+        private void txtMachineDescription_TextChanged(object sender,
+                                                       EventArgs e)
         {
 
         }
@@ -65,7 +67,8 @@ namespace Presenter
             PopulateDataGridView();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender,
+                                   EventArgs e)
         {
             Job CodeStompJob = new Job();
             CodeStompJob.MachineDescription = txtMachineDescription.Text.Trim();

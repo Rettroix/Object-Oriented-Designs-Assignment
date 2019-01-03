@@ -9,7 +9,8 @@ namespace Presenter
     {
         public UniDBContext () : base("name=UniDatabase")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<UniDBContext, Presenter.Migrations.Configuration>("UniDatabase"));
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<UniDBContext,
+                                    Presenter.Migrations.Configuration>("UniDatabase"));
 
         }
         public DbSet<ClientCompany> ClientCompanys {get; set;}
