@@ -15,11 +15,12 @@ namespace Presenter
         public JobViewerPresenter(int rowIndex)
         {
             jobViewerInstance = new JobViewer(this);
-            jobViewerInstance.jobsToView(rowIndex);
             jobsIndex = rowIndex;
+            jobViewerInstance.jobsToView(jobsIndex);
             jobViewerInstance.Show();
 
         }
+ 
 
         public void SaveClick()
         {
@@ -62,6 +63,7 @@ namespace Presenter
                 return query.ToList()[jobsIndex].Jobs.ToList();
 
             }
+            return null;
         }
     }
 

@@ -173,8 +173,8 @@ namespace Presenter
                     new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
-            this.label1.Click += 
-                    new System.EventHandler(this.label1_Click);
+
+
             // 
             // txtName
             // 
@@ -184,8 +184,6 @@ namespace Presenter
             this.txtName.Size = 
                     new System.Drawing.Size(228, 20);
             this.txtName.TabIndex = 1;
-            this.txtName.TextChanged += 
-                    new System.EventHandler(this.txtName_TextChanged);
             // 
             // btnSave
             // 
@@ -223,9 +221,8 @@ namespace Presenter
             this.dataGridView1.CellClick += 
                     new System.Windows.Forms.DataGridViewCellEventHandler
                                             (this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += 
-                    new System.Windows.Forms.DataGridViewCellEventHandler
-                                            (this.dataGridView1_CellContentClick);
+
+  
             // 
             // txtEmail
             // 
@@ -235,8 +232,6 @@ namespace Presenter
             this.txtEmail.Size =
                     new System.Drawing.Size(228, 20);
             this.txtEmail.TabIndex = 5;
-            this.txtEmail.TextChanged += 
-                    new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label2
             // 
@@ -283,8 +278,7 @@ namespace Presenter
                     new System.Drawing.Size(80, 13);
             this.label5.TabIndex = 12;
             this.label5.Text = "Client Company";
-            this.label5.Click += 
-                    new System.EventHandler(this.label5_Click);
+
             // 
             // dataGridView3
             // 
@@ -403,7 +397,6 @@ namespace Presenter
             this.Controls.Add(this.label1);
             this.Name = "Program";
             this.Text = "Insert Update Delete";
-            this.Load += new System.EventHandler(this.Program_Load);
             ((System.ComponentModel.ISupportInitialize)
              (this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)
@@ -413,11 +406,6 @@ namespace Presenter
 
         }
 
-        private void label1_Click(object sender,
-                                  EventArgs e)
-        {
-
-        }
 
         private void button3_Click(object sender,
                                    EventArgs e)
@@ -425,17 +413,6 @@ namespace Presenter
             clearText();
         }
 
-        private void textBox3_TextChanged(object sender,
-                                          EventArgs e)
-        {
-
-        }
-
-        private void Program_Load(object sender,
-                                  EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender,
                                    EventArgs e)
@@ -456,41 +433,7 @@ namespace Presenter
 
         }
 
-        private void label5_Click(object sender,
-                                  EventArgs e)
-        {
 
-        }
-
-        private void label3_Click(object sender,
-                                  EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender,
-                                          EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender,
-                                  EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender,
-                                  EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender,
-                                  EventArgs e)
-        {
-
-        }
 
         private void clearText()
         { 
@@ -500,47 +443,6 @@ namespace Presenter
             PopulateDataGridView();
         }
 
-        private void textBox2_TextChanged(object sender,
-                                          EventArgs e)
-        {
-
-        }
-
-        private void txtName_TextChanged(object sender,
-                                         EventArgs e)
-        {
-
-        }
-
-        private void txtJobUrgency_TextChanged(object sender,
-                                               EventArgs e)
-        {
-
-        }
-
-        private void txtMachineComplexity_TextChanged(object sender,
-                                                      EventArgs e)
-        {
-
-        }
-
-        private void txtStreet_TextChanged(object sender,
-                                           EventArgs e)
-        {
-
-        }
-
-        private void txtTown_TextChanged(object sender,
-                                         EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender,
-                                                    DataGridViewCellEventArgs e)
-        {
-
-        }
 
         void PopulateDataGridView()
         {
@@ -577,20 +479,17 @@ namespace Presenter
                     Console.WriteLine("All Jobs in the database:");
                     //Console.WriteLine(query.ToList()[e.RowIndex].Jobs.ToList()
                     //                    [0].MachineDescription);
-                    JobViewerPresenter jobViewPresenter = new JobViewerPresenter(e.RowIndex);
+                    //jobViewPresenter.passIndex(e.RowIndex);
+                }                    
+                
+                JobViewerPresenter jobViewPresenter = new JobViewerPresenter(e.RowIndex);
 
-                }
                 Console.WriteLine(String.Format("Row{0}, Col {1}",
                                                 e.RowIndex,
                                                 e.ColumnIndex));
             }
         }
 
-        private void dataGridView2_CellContentClick(object sender,
-                                                    DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
 
