@@ -24,19 +24,19 @@ namespace Presenter
 
         public void SaveClick()
         {
-            Job CodeStompJob = new Job();
-            CodeStompJob.MachineDescription = jobViewerInstance.GetTxtMachineDescription();
-            CodeStompJob.FaultDescription = jobViewerInstance.GetTxtFaultDescription();
-            CodeStompJob.JobUrgency = Convert.ToInt32(jobViewerInstance.GetTxtJobUrgency());
-            CodeStompJob.MachineComplexity = Convert.ToInt32(jobViewerInstance.GetTxtMachineComplexity());
+            Job NewJob = new Job();
+            NewJob.MachineDescription = jobViewerInstance.GetTxtMachineDescription();
+            NewJob.FaultDescription = jobViewerInstance.GetTxtFaultDescription();
+            NewJob.JobUrgency = Convert.ToInt32(jobViewerInstance.GetTxtJobUrgency());
+            NewJob.MachineComplexity = Convert.ToInt32(jobViewerInstance.GetTxtMachineComplexity());
 
-            Address CodeStompFactoryLocation = new Address();
-            CodeStompFactoryLocation.HouseNumber = jobViewerInstance.GetTxtHouseNumber();
-            CodeStompFactoryLocation.Street = jobViewerInstance.GetTxtStreet();
-            CodeStompFactoryLocation.Town = jobViewerInstance.GetTxtTown();
-            CodeStompFactoryLocation.PostCode = jobViewerInstance.GetTxtPostcode();
+            Address NewFactoryLocation = new Address();
+            NewFactoryLocation.HouseNumber = jobViewerInstance.GetTxtHouseNumber();
+            NewFactoryLocation.Street = jobViewerInstance.GetTxtStreet();
+            NewFactoryLocation.Town = jobViewerInstance.GetTxtTown();
+            NewFactoryLocation.PostCode = jobViewerInstance.GetTxtPostcode();
 
-            CodeStompJob.FactoryLocation.Add(CodeStompFactoryLocation);
+            NewJob.FactoryLocation.Add(NewFactoryLocation);
 
             using (var context = new UniDBContext())
             {
@@ -46,8 +46,8 @@ namespace Presenter
                             select b;
 
 
-                CodeStompJob.FactoryLocation.Add(CodeStompFactoryLocation);
-                query.ToList()[jobsIndex].Jobs.Add(CodeStompJob);
+                NewJob.FactoryLocation.Add(NewFactoryLocation);
+                query.ToList()[jobsIndex].Jobs.Add(NewJob);
                 context.SaveChanges();
             }
         }

@@ -469,24 +469,9 @@ namespace Presenter
             {
                 Console.WriteLine(String.Format("Row{0}, Col {1}",
                                                 e.RowIndex,
-                                                e.ColumnIndex));
-                using (var context = new UniDBContext())
-                {
-                    var query = from b in context.ClientCompanys
-                                orderby b.ClientID
-                                select b;
-
-                    Console.WriteLine("All Jobs in the database:");
-                    //Console.WriteLine(query.ToList()[e.RowIndex].Jobs.ToList()
-                    //                    [0].MachineDescription);
-                    //jobViewPresenter.passIndex(e.RowIndex);
-                }                    
+                                                e.ColumnIndex));                 
                 
                 JobViewerPresenter jobViewPresenter = new JobViewerPresenter(e.RowIndex);
-
-                Console.WriteLine(String.Format("Row{0}, Col {1}",
-                                                e.RowIndex,
-                                                e.ColumnIndex));
             }
         }
 

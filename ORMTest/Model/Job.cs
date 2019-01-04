@@ -25,5 +25,7 @@ namespace Model
         public int MachineComplexity { get; set; }
 
         public List<Address> FactoryLocation { get; set; }
+        public virtual ICollection<Staff> AssignedStaff { get; set; }
+
     }
 }

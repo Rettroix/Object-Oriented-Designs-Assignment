@@ -108,5 +108,17 @@ namespace Presenter
         {
             return txtPostcode.Text.Trim();
         }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex.Equals(JobViewGrid.Columns["AssignStaff"].Index))
+            {
+                Console.WriteLine(String.Format("Row{0}, Col {1}", e.RowIndex, e.ColumnIndex));
+                StaffAssigner staffAssigner = new StaffAssigner(e.RowIndex, jobsIndex);
+                staffAssigner.Show();
+
+
+            }
+        }
     }
 }
