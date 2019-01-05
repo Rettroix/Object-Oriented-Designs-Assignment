@@ -16,7 +16,7 @@ namespace Presenter
         private Button btnSave;
         private TextBox txtEmail;
         private Label label2;
-        private Button button2;
+        private Button btnDelete;
         private Button btnCancel;
         private Label label5;
         private DataGridView dataGridView3;
@@ -118,231 +118,71 @@ namespace Presenter
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 =
-                    new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = 
-                    new System.Windows.Forms.Label();
-            this.txtName = 
-                    new System.Windows.Forms.TextBox();
-            this.btnSave = 
-                    new System.Windows.Forms.Button();
-            this.dataGridView1 = 
-                    new System.Windows.Forms.DataGridView();
-            this.txtEmail = 
-                    new System.Windows.Forms.TextBox();
-            this.label2 = 
-                    new System.Windows.Forms.Label();
-            this.button2 = 
-                    new System.Windows.Forms.Button();
-            this.btnCancel = 
-                    new System.Windows.Forms.Button();
-            this.label5 = 
-                    new System.Windows.Forms.Label();
-            this.dataGridView3 = 
-                    new System.Windows.Forms.DataGridView();
-            this.FactoryID = 
-                    new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 =
-                    new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 =
-                    new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 =
-                    new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = 
-                    new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClientName =
-                    new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = 
-                    new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AvailableJobs = 
-                    new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)
-                        (this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)
-                        (this.dataGridView3)).BeginInit();
+            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AvailableJobs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.FactoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = 
-                    new System.Drawing.Point(73, 105);
+            this.label1.Location = new System.Drawing.Point(73, 105);
             this.label1.Name = "label1";
-            this.label1.Size = 
-                    new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
-
-
             // 
             // txtName
             // 
-            this.txtName.Location = 
-                    new System.Drawing.Point(125, 105);
+            this.txtName.Location = new System.Drawing.Point(125, 105);
             this.txtName.Name = "txtName";
-            this.txtName.Size = 
-                    new System.Drawing.Size(228, 20);
+            this.txtName.Size = new System.Drawing.Size(228, 20);
             this.txtName.TabIndex = 1;
             // 
             // btnSave
             // 
-            this.btnSave.Location = 
-                    new System.Drawing.Point(76, 186);
+            this.btnSave.Location = new System.Drawing.Point(76, 186);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = 
-                    new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 2;
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += 
-                    new System.EventHandler(this.button1_Click);
+            this.btnSave.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = 
-                    System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] 
-            {
-                this.ID,
-                this.ClientName,
-                this.Email,
-                this.AvailableJobs
-            });
-
-            this.dataGridView1.Location = 
-                    new System.Drawing.Point(483, 12);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.ClientName,
+            this.Email,
+            this.AvailableJobs});
+            this.dataGridView1.Location = new System.Drawing.Point(483, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = 
-                    new System.Drawing.Size(625, 113);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellClick += 
-                    new System.Windows.Forms.DataGridViewCellEventHandler
-                                            (this.dataGridView1_CellClick);
-
-  
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location =
-                    new System.Drawing.Point(125, 133);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size =
-                    new System.Drawing.Size(228, 20);
-            this.txtEmail.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = 
-                    new System.Drawing.Point(73, 133);
-            this.label2.Name = "label2";
-            this.label2.Size = 
-                    new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Email";
-            // 
-            // button2
-            // 
-            this.button2.Location = 
-                    new System.Drawing.Point(174, 186);
-            this.button2.Name = "button2";
-            this.button2.Size = 
-                    new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = 
-                    new System.Drawing.Point(278, 186);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = 
-                    new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 9;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += 
-                    new System.EventHandler(this.button3_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = 
-                    new System.Drawing.Point(74, 79);
-            this.label5.Name = "label5";
-            this.label5.Size = 
-                    new System.Drawing.Size(80, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Client Company";
-
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = 
-                    System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.
-                                         AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.
-                                                    DataGridViewColumn[] 
-            {
-                this.FactoryID,
-                this.dataGridViewTextBoxColumn19,
-                this.dataGridViewTextBoxColumn20,
-                this.dataGridViewTextBoxColumn21,
-                this.dataGridViewTextBoxColumn22
-            });
-            this.dataGridView3.Location = 
-                    new System.Drawing.Point(483, 153);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size =
-                    new System.Drawing.Size(625, 167);
-            this.dataGridView3.TabIndex = 28;
-            // 
-            // FactoryID
-            // 
-            this.FactoryID.DataPropertyName = "FactoryID";
-            this.FactoryID.HeaderText = "FactoryID";
-            this.FactoryID.Name = "FactoryID";
-            this.FactoryID.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = 
-                                                        "HouseNumber";
-            this.dataGridViewTextBoxColumn19.HeaderText = 
-                                                        "HouseNumber";
-            this.dataGridViewTextBoxColumn19.Name = 
-                                        "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "Street";
-            this.dataGridViewTextBoxColumn20.HeaderText = "Street";
-            this.dataGridViewTextBoxColumn20.Name =
-                                        "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "Town";
-            this.dataGridViewTextBoxColumn21.HeaderText = "Town";
-            this.dataGridViewTextBoxColumn21.Name = 
-                                        "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "Postcode";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Postcode";
-            this.dataGridViewTextBoxColumn22.Name =
-                                        "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(625, 113);
+            this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // ID
             // 
@@ -368,19 +208,108 @@ namespace Presenter
             // AvailableJobs
             // 
             this.AvailableJobs.DataPropertyName = "AvailableJobs";
-            dataGridViewCellStyle1.BackColor = 
-                            System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.Font = 
-                        new System.Drawing.Font("Microsoft Sans Serif",
-                                           8.25F,
-                                           System.Drawing.FontStyle.Bold,
-                                           System.Drawing.GraphicsUnit.Point,
-                                           ((byte)(0)));
-            dataGridViewCellStyle1.NullValue = "CLICK";
-            this.AvailableJobs.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.NullValue = "CLICK";
+            this.AvailableJobs.DefaultCellStyle = dataGridViewCellStyle2;
             this.AvailableJobs.HeaderText = "AvailableJobs";
             this.AvailableJobs.Name = "AvailableJobs";
             this.AvailableJobs.ReadOnly = true;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(125, 133);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(228, 20);
+            this.txtEmail.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(73, 133);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Email";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(174, 186);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(278, 186);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(74, 79);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Client Company";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FactoryID,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22});
+            this.dataGridView3.Location = new System.Drawing.Point(483, 153);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(625, 167);
+            this.dataGridView3.TabIndex = 28;
+            // 
+            // FactoryID
+            // 
+            this.FactoryID.DataPropertyName = "FactoryID";
+            this.FactoryID.HeaderText = "FactoryID";
+            this.FactoryID.Name = "FactoryID";
+            this.FactoryID.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "HouseNumber";
+            this.dataGridViewTextBoxColumn19.HeaderText = "HouseNumber";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "Street";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Street";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "Town";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Town";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Postcode";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Postcode";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.ReadOnly = true;
             // 
             // Program
             // 
@@ -388,7 +317,7 @@ namespace Presenter
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
@@ -397,10 +326,8 @@ namespace Presenter
             this.Controls.Add(this.label1);
             this.Name = "Program";
             this.Text = "Insert Update Delete";
-            ((System.ComponentModel.ISupportInitialize)
-             (this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)
-             (this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

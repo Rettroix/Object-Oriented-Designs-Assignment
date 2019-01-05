@@ -120,5 +120,10 @@ namespace Presenter
 
             }
         }
+
+        private void txtPostcode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

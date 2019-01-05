@@ -48,32 +48,29 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(238, 457);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Location = new System.Drawing.Point(178, 371);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 28);
-            this.btnCancel.TabIndex = 71;
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(130, 457);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(98, 371);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 70;
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(22, 457);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(16, 371);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 28);
-            this.btnSave.TabIndex = 69;
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -86,13 +83,12 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            this.StaffViewGrid.Location = new System.Drawing.Point(598, 40);
-            this.StaffViewGrid.Margin = new System.Windows.Forms.Padding(4);
+            this.StaffViewGrid.Location = new System.Drawing.Point(448, 32);
             this.StaffViewGrid.Name = "StaffViewGrid";
             this.StaffViewGrid.ReadOnly = true;
             this.StaffViewGrid.RowTemplate.Height = 24;
-            this.StaffViewGrid.Size = new System.Drawing.Size(879, 446);
-            this.StaffViewGrid.TabIndex = 50;
+            this.StaffViewGrid.Size = new System.Drawing.Size(659, 362);
+            this.StaffViewGrid.TabIndex = 7;
             this.StaffViewGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.JobViewGrid_CellClick);
             // 
             // StaffID
@@ -126,65 +122,72 @@
             // AssignStaffTitle
             // 
             this.AssignStaffTitle.AutoSize = true;
-            this.AssignStaffTitle.Location = new System.Drawing.Point(39, 44);
+            this.AssignStaffTitle.Location = new System.Drawing.Point(29, 36);
+            this.AssignStaffTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AssignStaffTitle.Name = "AssignStaffTitle";
-            this.AssignStaffTitle.Size = new System.Drawing.Size(83, 17);
+            this.AssignStaffTitle.Size = new System.Drawing.Size(63, 13);
             this.AssignStaffTitle.TabIndex = 72;
             this.AssignStaffTitle.Text = "Assign Staff";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 94);
+            this.label1.Location = new System.Drawing.Point(29, 76);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 73;
             this.label1.Text = "Staff Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 131);
+            this.label2.Location = new System.Drawing.Point(29, 106);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 17);
+            this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 74;
             this.label2.Text = "Staff Role";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 165);
+            this.label3.Location = new System.Drawing.Point(29, 134);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 17);
+            this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 75;
             this.label3.Text = "Job Date";
             // 
             // txtStaffName
             // 
-            this.txtStaffName.Location = new System.Drawing.Point(130, 94);
+            this.txtStaffName.Location = new System.Drawing.Point(98, 76);
+            this.txtStaffName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtStaffName.Name = "txtStaffName";
-            this.txtStaffName.Size = new System.Drawing.Size(410, 22);
-            this.txtStaffName.TabIndex = 76;
+            this.txtStaffName.Size = new System.Drawing.Size(308, 20);
+            this.txtStaffName.TabIndex = 1;
             // 
             // txtStaffRole
             // 
-            this.txtStaffRole.Location = new System.Drawing.Point(130, 128);
+            this.txtStaffRole.Location = new System.Drawing.Point(98, 104);
+            this.txtStaffRole.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtStaffRole.Name = "txtStaffRole";
-            this.txtStaffRole.Size = new System.Drawing.Size(410, 22);
-            this.txtStaffRole.TabIndex = 77;
+            this.txtStaffRole.Size = new System.Drawing.Size(308, 20);
+            this.txtStaffRole.TabIndex = 2;
             // 
             // txtJobDate
             // 
-            this.txtJobDate.Location = new System.Drawing.Point(130, 165);
+            this.txtJobDate.Location = new System.Drawing.Point(98, 134);
+            this.txtJobDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtJobDate.Name = "txtJobDate";
-            this.txtJobDate.Size = new System.Drawing.Size(410, 22);
-            this.txtJobDate.TabIndex = 78;
+            this.txtJobDate.Size = new System.Drawing.Size(308, 20);
+            this.txtJobDate.TabIndex = 3;
             // 
             // StaffAssigner
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1490, 567);
+            this.ClientSize = new System.Drawing.Size(1118, 461);
             this.Controls.Add(this.txtJobDate);
             this.Controls.Add(this.txtStaffRole);
             this.Controls.Add(this.txtStaffName);
@@ -196,6 +199,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.StaffViewGrid);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "StaffAssigner";
             this.Text = "StaffAssigner";
             ((System.ComponentModel.ISupportInitialize)(this.StaffViewGrid)).EndInit();
