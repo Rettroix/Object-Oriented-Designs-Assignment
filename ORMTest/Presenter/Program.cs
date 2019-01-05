@@ -11,15 +11,15 @@ namespace Presenter
 {
     public partial class Program : Form
     {
-        private Label label1;
+        private Label lblName;
         private TextBox txtName;
         private Button btnSave;
         private TextBox txtEmail;
-        private Label label2;
+        private Label lblEmail;
         private Button btnDelete;
         private Button btnCancel;
-        private Label label5;
-        private DataGridView dataGridView3;
+        private Label lblClientCompany;
+        private DataGridView FactoryGrid;
         private DataGridViewTextBoxColumn FactoryID;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
@@ -29,7 +29,7 @@ namespace Presenter
         private DataGridViewTextBoxColumn ClientName;
         private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn AvailableJobs;
-        private DataGridView dataGridView1;
+        private DataGridView ClientGrid;
     
         public Program()
         {
@@ -118,38 +118,38 @@ namespace Presenter
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ClientGrid = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AvailableJobs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.lblClientCompany = new System.Windows.Forms.Label();
+            this.FactoryGrid = new System.Windows.Forms.DataGridView();
             this.FactoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FactoryGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 105);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(73, 105);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Name";
             // 
             // txtName
             // 
@@ -166,23 +166,23 @@ namespace Presenter
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.button1_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // dataGridView1
+            // ClientGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClientGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ClientGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.ClientName,
             this.Email,
             this.AvailableJobs});
-            this.dataGridView1.Location = new System.Drawing.Point(483, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(625, 113);
-            this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.ClientGrid.Location = new System.Drawing.Point(483, 12);
+            this.ClientGrid.Name = "ClientGrid";
+            this.ClientGrid.ReadOnly = true;
+            this.ClientGrid.RowTemplate.Height = 24;
+            this.ClientGrid.Size = new System.Drawing.Size(625, 113);
+            this.ClientGrid.TabIndex = 6;
+            this.ClientGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientGrid_CellClick);
             // 
             // ID
             // 
@@ -208,10 +208,10 @@ namespace Presenter
             // AvailableJobs
             // 
             this.AvailableJobs.DataPropertyName = "AvailableJobs";
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.NullValue = "CLICK";
-            this.AvailableJobs.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.NullValue = "CLICK";
+            this.AvailableJobs.DefaultCellStyle = dataGridViewCellStyle3;
             this.AvailableJobs.HeaderText = "AvailableJobs";
             this.AvailableJobs.Name = "AvailableJobs";
             this.AvailableJobs.ReadOnly = true;
@@ -223,14 +223,14 @@ namespace Presenter
             this.txtEmail.Size = new System.Drawing.Size(228, 20);
             this.txtEmail.TabIndex = 2;
             // 
-            // label2
+            // lblEmail
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(73, 133);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Email";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(73, 133);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.TabIndex = 4;
+            this.lblEmail.Text = "Email";
             // 
             // btnDelete
             // 
@@ -249,32 +249,32 @@ namespace Presenter
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.button3_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // label5
+            // lblClientCompany
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(74, 79);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Client Company";
+            this.lblClientCompany.AutoSize = true;
+            this.lblClientCompany.Location = new System.Drawing.Point(74, 79);
+            this.lblClientCompany.Name = "lblClientCompany";
+            this.lblClientCompany.Size = new System.Drawing.Size(80, 13);
+            this.lblClientCompany.TabIndex = 12;
+            this.lblClientCompany.Text = "Client Company";
             // 
-            // dataGridView3
+            // FactoryGrid
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FactoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FactoryGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FactoryID,
             this.dataGridViewTextBoxColumn19,
             this.dataGridViewTextBoxColumn20,
             this.dataGridViewTextBoxColumn21,
             this.dataGridViewTextBoxColumn22});
-            this.dataGridView3.Location = new System.Drawing.Point(483, 153);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(625, 167);
-            this.dataGridView3.TabIndex = 28;
+            this.FactoryGrid.Location = new System.Drawing.Point(483, 153);
+            this.FactoryGrid.Name = "FactoryGrid";
+            this.FactoryGrid.ReadOnly = true;
+            this.FactoryGrid.RowTemplate.Height = 24;
+            this.FactoryGrid.Size = new System.Drawing.Size(625, 167);
+            this.FactoryGrid.TabIndex = 28;
             // 
             // FactoryID
             // 
@@ -314,34 +314,34 @@ namespace Presenter
             // Program
             // 
             this.ClientSize = new System.Drawing.Size(1120, 352);
-            this.Controls.Add(this.dataGridView3);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.FactoryGrid);
+            this.Controls.Add(this.lblClientCompany);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.ClientGrid);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblName);
             this.Name = "Program";
             this.Text = "Insert Update Delete";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FactoryGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
 
-        private void button3_Click(object sender,
+        private void btnCancel_Click(object sender,
                                    EventArgs e)
         {
             clearText();
         }
 
 
-        private void button1_Click(object sender,
+        private void btnSave_Click(object sender,
                                    EventArgs e)
         {
 
@@ -373,16 +373,16 @@ namespace Presenter
 
         void PopulateDataGridView()
         {
-            dataGridView1.AutoGenerateColumns = false;
+            ClientGrid.AutoGenerateColumns = false;
             using (var context = new UniDBContext())
             {
-                dataGridView1.DataSource = context.ClientCompanys.ToList<ClientCompany>();
-                dataGridView3.DataSource = context.Addresses.ToList<Address>();
+                ClientGrid.DataSource = context.ClientCompanys.ToList<ClientCompany>();
+                FactoryGrid.DataSource = context.Addresses.ToList<Address>();
 
             }
         }
 
-        private void dataGridView1_CellClick(object sender,
+        private void ClientGrid_CellClick(object sender,
                                              DataGridViewCellEventArgs e)
         {
             //if(dataGridView1.Columns["AvailableJobs"].Selected)
@@ -391,7 +391,7 @@ namespace Presenter
             //}
 
 
-            if(e.ColumnIndex.Equals(dataGridView1.Columns["AvailableJobs"].
+            if(e.ColumnIndex.Equals(ClientGrid.Columns["AvailableJobs"].
                                     Index))
             {
                 Console.WriteLine(String.Format("Row{0}, Col {1}",

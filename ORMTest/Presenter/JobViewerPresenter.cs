@@ -63,7 +63,6 @@ namespace Presenter
                 return query.ToList()[jobsIndex].Jobs.ToList();
 
             }
-            return null;
         }
     }
 
