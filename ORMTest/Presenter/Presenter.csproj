@@ -64,7 +64,6 @@
       <DependentUpon>JobViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="JobViewerPresenter.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,7 +74,6 @@
     <Compile Include="StaffAssigner.Designer.cs">
       <DependentUpon>StaffAssigner.cs</DependentUpon>
     </Compile>
-    <Compile Include="UniDBContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
