@@ -24,9 +24,12 @@ namespace Presenter
 
         public void SaveClick()
         {
+
+
             Job NewJob = new Job();
             NewJob.MachineDescription = jobViewerInstance.GetTxtMachineDescription();
             NewJob.FaultDescription = jobViewerInstance.GetTxtFaultDescription();
+
             NewJob.JobUrgency = Convert.ToInt32(jobViewerInstance.GetTxtJobUrgency());
             NewJob.MachineComplexity = Convert.ToInt32(jobViewerInstance.GetTxtMachineComplexity());
 

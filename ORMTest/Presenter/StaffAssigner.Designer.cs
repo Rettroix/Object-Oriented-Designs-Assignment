@@ -42,7 +42,8 @@
             this.lblJobDate = new System.Windows.Forms.Label();
             this.txtStaffName = new System.Windows.Forms.TextBox();
             this.txtStaffRole = new System.Windows.Forms.TextBox();
-            this.txtJobDate = new System.Windows.Forms.TextBox();
+            this.mtxtJobDate = new System.Windows.Forms.MaskedTextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.StaffViewGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,6 +167,7 @@
             this.txtStaffName.Name = "txtStaffName";
             this.txtStaffName.Size = new System.Drawing.Size(308, 20);
             this.txtStaffName.TabIndex = 1;
+            this.txtStaffName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStaffName_KeyPress);
             // 
             // txtStaffRole
             // 
@@ -174,21 +176,32 @@
             this.txtStaffRole.Name = "txtStaffRole";
             this.txtStaffRole.Size = new System.Drawing.Size(308, 20);
             this.txtStaffRole.TabIndex = 2;
+            this.txtStaffRole.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStaffRole_KeyPress);
             // 
-            // txtJobDate
+            // mtxtJobDate
             // 
-            this.txtJobDate.Location = new System.Drawing.Point(98, 134);
-            this.txtJobDate.Margin = new System.Windows.Forms.Padding(2);
-            this.txtJobDate.Name = "txtJobDate";
-            this.txtJobDate.Size = new System.Drawing.Size(308, 20);
-            this.txtJobDate.TabIndex = 3;
+            this.mtxtJobDate.Location = new System.Drawing.Point(98, 134);
+            this.mtxtJobDate.Mask = "00/00/0000";
+            this.mtxtJobDate.Name = "mtxtJobDate";
+            this.mtxtJobDate.Size = new System.Drawing.Size(308, 20);
+            this.mtxtJobDate.TabIndex = 3;
+            this.mtxtJobDate.ValidatingType = typeof(System.DateTime);
+            this.mtxtJobDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxtJobDate_KeyPress);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(140, 196);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 76;
             // 
             // StaffAssigner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1118, 461);
-            this.Controls.Add(this.txtJobDate);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.mtxtJobDate);
             this.Controls.Add(this.txtStaffRole);
             this.Controls.Add(this.txtStaffName);
             this.Controls.Add(this.lblJobDate);
@@ -220,10 +233,11 @@
         private System.Windows.Forms.Label lblJobDate;
         private System.Windows.Forms.TextBox txtStaffName;
         private System.Windows.Forms.TextBox txtStaffRole;
-        private System.Windows.Forms.TextBox txtJobDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn StaffID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.MaskedTextBox mtxtJobDate;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

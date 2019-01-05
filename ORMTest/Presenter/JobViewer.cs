@@ -41,12 +41,6 @@ namespace Presenter
 
         }
 
-        private void txtMachineDescription_TextChanged(object sender,
-                                                       EventArgs e)
-        {
-
-        }
-
         public void clearText()
         {
 
@@ -124,6 +118,47 @@ namespace Presenter
         private void btnCancel_Click(object sender, EventArgs e)
         {
             clearText(); 
+        }
+
+        private void txtMachineDescription_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.ActiveControl = txtFaultDescription;
+        }
+
+        private void txtFaultDescription_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.ActiveControl = txtJobUrgency;
+        }
+
+        private void txtMachineComplexity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.ActiveControl = txtHouseNumber;
+        }
+        private void txtJobUrgency_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.ActiveControl = txtMachineComplexity;
+        }
+
+        private void txtHouseNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.ActiveControl = txtStreet;
+        }
+
+        private void txtStreet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.ActiveControl = txtTown;
+        }
+
+        private void txtTown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.ActiveControl = txtPostcode;
+        }
+
+        private void txtPostcode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            jobViewerPresenterInstance.SaveClick();
+            clearText();
+            MessageBox.Show("Submitted Successfully");
         }
     }
 }

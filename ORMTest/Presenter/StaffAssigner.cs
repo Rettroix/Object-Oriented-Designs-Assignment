@@ -30,26 +30,37 @@ namespace Presenter
 
         }
 
+        public void SaveJobData()
+        {
+            if (txtStaffName.Text != "" &&
+               txtStaffRole.Text != "")
+            {
+                Staff NewStaff = new Staff();
+                NewStaff.StaffName = txtStaffName.Text.Trim();
+                NewStaff.StaffRole = txtStaffRole.Text.Trim();
+                NewStaff.JobDate = mtxtJobDate.Text.Trim();
+
+                using (var context = new UniDBContext())
+                {
+
+                    var query = from b in context.ClientCompanys
+                                orderby b.ClientID
+                                select b;
+
+
+                    query.ToList()[jobIndex].Jobs.ToList()[staffIndex].AssignedStaff.Add(NewStaff);
+                    context.SaveChanges();
+                }
+            }
+            else
+            {
+                MessageBox.Show("please enter all data!"); 
+            }
+        }
+
         public void SaveClick()
         {
-            Staff NewStaff = new Staff();
-            NewStaff.StaffName = txtStaffName.Text.Trim();
-            NewStaff.StaffRole = txtStaffRole.Text.Trim();
-            NewStaff.JobDate = txtJobDate.Text.Trim();
-
-            using (var context = new UniDBContext())
-            {
-
-                var query = from b in context.ClientCompanys
-                            orderby b.ClientID
-                            select b;
-
-
-                query.ToList()[jobIndex].Jobs.ToList()[staffIndex].AssignedStaff.Add(NewStaff);
-                context.SaveChanges();
-            }
-
-
+            SaveJobData(); 
         }
 
 
@@ -73,7 +84,7 @@ namespace Presenter
 
             txtStaffName.Text = "";
             txtStaffRole.Text = "";
-            txtJobDate.Text = "";
+            mtxtJobDate.Text = "";
 
             PopulateDataGridView();
         }
@@ -88,6 +99,24 @@ namespace Presenter
         private void btnCancel_Click(object sender, EventArgs e)
         {
             clearText();
+        }
+
+        private void txtStaffName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.ActiveControl = txtStaffRole;
+        }
+
+        private void txtStaffRole_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.ActiveControl = mtxtJobDate;
+        }
+
+        private void mtxtJobDate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                SaveJobData();
+            }
         }
     }
 }

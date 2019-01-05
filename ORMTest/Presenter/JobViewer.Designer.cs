@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.JobViewGrid = new System.Windows.Forms.DataGridView();
             this.JobID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -116,10 +116,10 @@
             // 
             // AssignStaff
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.NullValue = "Assign";
-            this.AssignStaff.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.NullValue = "Assign";
+            this.AssignStaff.DefaultCellStyle = dataGridViewCellStyle8;
             this.AssignStaff.HeaderText = "AssignStaff";
             this.AssignStaff.Name = "AssignStaff";
             this.AssignStaff.ReadOnly = true;
@@ -130,6 +130,7 @@
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(228, 20);
             this.txtPostcode.TabIndex = 8;
+            this.txtPostcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPostcode_KeyPress);
             // 
             // txtTown
             // 
@@ -137,6 +138,7 @@
             this.txtTown.Name = "txtTown";
             this.txtTown.Size = new System.Drawing.Size(228, 20);
             this.txtTown.TabIndex = 7;
+            this.txtTown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTown_KeyPress);
             // 
             // txtStreet
             // 
@@ -144,6 +146,7 @@
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Size = new System.Drawing.Size(228, 20);
             this.txtStreet.TabIndex = 6;
+            this.txtStreet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStreet_KeyPress);
             // 
             // txtHouseNumber
             // 
@@ -151,6 +154,7 @@
             this.txtHouseNumber.Name = "txtHouseNumber";
             this.txtHouseNumber.Size = new System.Drawing.Size(228, 20);
             this.txtHouseNumber.TabIndex = 5;
+            this.txtHouseNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHouseNumber_KeyPress);
             // 
             // lblPostCode
             // 
@@ -203,6 +207,7 @@
             this.txtMachineComplexity.Name = "txtMachineComplexity";
             this.txtMachineComplexity.Size = new System.Drawing.Size(228, 20);
             this.txtMachineComplexity.TabIndex = 4;
+            this.txtMachineComplexity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMachineComplexity_KeyPress);
             // 
             // txtJobUrgency
             // 
@@ -210,6 +215,7 @@
             this.txtJobUrgency.Name = "txtJobUrgency";
             this.txtJobUrgency.Size = new System.Drawing.Size(228, 20);
             this.txtJobUrgency.TabIndex = 3;
+            this.txtJobUrgency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJobUrgency_KeyPress);
             // 
             // lblComplex
             // 
@@ -244,6 +250,7 @@
             this.txtFaultDescription.Name = "txtFaultDescription";
             this.txtFaultDescription.Size = new System.Drawing.Size(228, 20);
             this.txtFaultDescription.TabIndex = 2;
+            this.txtFaultDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFaultDescription_KeyPress);
             // 
             // lblMachineDescription
             // 
@@ -260,7 +267,7 @@
             this.txtMachineDescription.Name = "txtMachineDescription";
             this.txtMachineDescription.Size = new System.Drawing.Size(228, 20);
             this.txtMachineDescription.TabIndex = 1;
-            this.txtMachineDescription.TextChanged += new System.EventHandler(this.txtMachineDescription_TextChanged);
+            this.txtMachineDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMachineDescription_KeyPress);
             // 
             // lblJobs
             // 
