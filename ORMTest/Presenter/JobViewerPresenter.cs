@@ -65,6 +65,4 @@ namespace Presenter
             }
         }
     }
-
-
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnCancel = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.StaffViewGrid = new System.Windows.Forms.DataGridView();
             this.StaffID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,9 +37,9 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AssignStaffTitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblStaffName = new System.Windows.Forms.Label();
+            this.lblStaffRole = new System.Windows.Forms.Label();
+            this.lblJobDate = new System.Windows.Forms.Label();
             this.txtStaffName = new System.Windows.Forms.TextBox();
             this.txtStaffRole = new System.Windows.Forms.TextBox();
             this.txtJobDate = new System.Windows.Forms.TextBox();
@@ -56,14 +56,14 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.Location = new System.Drawing.Point(98, 371);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(98, 371);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
@@ -129,40 +129,40 @@
             this.AssignStaffTitle.TabIndex = 72;
             this.AssignStaffTitle.Text = "Assign Staff";
             // 
-            // label1
+            // lblStaffName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 76);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 73;
-            this.label1.Text = "Staff Name";
+            this.lblStaffName.AutoSize = true;
+            this.lblStaffName.Location = new System.Drawing.Point(29, 76);
+            this.lblStaffName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStaffName.Name = "lblStaffName";
+            this.lblStaffName.Size = new System.Drawing.Size(60, 13);
+            this.lblStaffName.TabIndex = 73;
+            this.lblStaffName.Text = "Staff Name";
             // 
-            // label2
+            // lblStaffRole
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 106);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 74;
-            this.label2.Text = "Staff Role";
+            this.lblStaffRole.AutoSize = true;
+            this.lblStaffRole.Location = new System.Drawing.Point(29, 106);
+            this.lblStaffRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStaffRole.Name = "lblStaffRole";
+            this.lblStaffRole.Size = new System.Drawing.Size(54, 13);
+            this.lblStaffRole.TabIndex = 74;
+            this.lblStaffRole.Text = "Staff Role";
             // 
-            // label3
+            // lblJobDate
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 134);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
-            this.label3.TabIndex = 75;
-            this.label3.Text = "Job Date";
+            this.lblJobDate.AutoSize = true;
+            this.lblJobDate.Location = new System.Drawing.Point(29, 134);
+            this.lblJobDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblJobDate.Name = "lblJobDate";
+            this.lblJobDate.Size = new System.Drawing.Size(50, 13);
+            this.lblJobDate.TabIndex = 75;
+            this.lblJobDate.Text = "Job Date";
             // 
             // txtStaffName
             // 
             this.txtStaffName.Location = new System.Drawing.Point(98, 76);
-            this.txtStaffName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStaffName.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffName.Name = "txtStaffName";
             this.txtStaffName.Size = new System.Drawing.Size(308, 20);
             this.txtStaffName.TabIndex = 1;
@@ -170,7 +170,7 @@
             // txtStaffRole
             // 
             this.txtStaffRole.Location = new System.Drawing.Point(98, 104);
-            this.txtStaffRole.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStaffRole.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffRole.Name = "txtStaffRole";
             this.txtStaffRole.Size = new System.Drawing.Size(308, 20);
             this.txtStaffRole.TabIndex = 2;
@@ -178,7 +178,7 @@
             // txtJobDate
             // 
             this.txtJobDate.Location = new System.Drawing.Point(98, 134);
-            this.txtJobDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtJobDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtJobDate.Name = "txtJobDate";
             this.txtJobDate.Size = new System.Drawing.Size(308, 20);
             this.txtJobDate.TabIndex = 3;
@@ -191,15 +191,15 @@
             this.Controls.Add(this.txtJobDate);
             this.Controls.Add(this.txtStaffRole);
             this.Controls.Add(this.txtStaffName);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblJobDate);
+            this.Controls.Add(this.lblStaffRole);
+            this.Controls.Add(this.lblStaffName);
             this.Controls.Add(this.AssignStaffTitle);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.StaffViewGrid);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StaffAssigner";
             this.Text = "StaffAssigner";
             ((System.ComponentModel.ISupportInitialize)(this.StaffViewGrid)).EndInit();
@@ -211,13 +211,13 @@
         #endregion
 
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView StaffViewGrid;
         private System.Windows.Forms.Label AssignStaffTitle;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblStaffName;
+        private System.Windows.Forms.Label lblStaffRole;
+        private System.Windows.Forms.Label lblJobDate;
         private System.Windows.Forms.TextBox txtStaffName;
         private System.Windows.Forms.TextBox txtStaffRole;
         private System.Windows.Forms.TextBox txtJobDate;

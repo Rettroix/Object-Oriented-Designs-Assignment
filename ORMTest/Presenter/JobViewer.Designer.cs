@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.JobViewGrid = new System.Windows.Forms.DataGridView();
             this.JobID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,22 +40,22 @@
             this.txtTown = new System.Windows.Forms.TextBox();
             this.txtStreet = new System.Windows.Forms.TextBox();
             this.txtHouseNumber = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblPostCode = new System.Windows.Forms.Label();
+            this.lblTown = new System.Windows.Forms.Label();
+            this.lblStreet = new System.Windows.Forms.Label();
+            this.lblHouseNo = new System.Windows.Forms.Label();
+            this.lblLocation = new System.Windows.Forms.Label();
             this.txtMachineComplexity = new System.Windows.Forms.TextBox();
             this.txtJobUrgency = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblComplex = new System.Windows.Forms.Label();
+            this.lblUrgancy = new System.Windows.Forms.Label();
+            this.lblFault = new System.Windows.Forms.Label();
             this.txtFaultDescription = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblMachineDescription = new System.Windows.Forms.Label();
             this.txtMachineDescription = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblJobs = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.JobViewGrid)).BeginInit();
             this.SuspendLayout();
@@ -116,10 +116,10 @@
             // 
             // AssignStaff
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.NullValue = "Assign";
-            this.AssignStaff.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.NullValue = "Assign";
+            this.AssignStaff.DefaultCellStyle = dataGridViewCellStyle1;
             this.AssignStaff.HeaderText = "AssignStaff";
             this.AssignStaff.Name = "AssignStaff";
             this.AssignStaff.ReadOnly = true;
@@ -153,50 +153,50 @@
             this.txtHouseNumber.Size = new System.Drawing.Size(228, 20);
             this.txtHouseNumber.TabIndex = 5;
             // 
-            // label13
+            // lblPostCode
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 299);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 13);
-            this.label13.TabIndex = 42;
-            this.label13.Text = "Postcode";
+            this.lblPostCode.AutoSize = true;
+            this.lblPostCode.Location = new System.Drawing.Point(12, 299);
+            this.lblPostCode.Name = "lblPostCode";
+            this.lblPostCode.Size = new System.Drawing.Size(52, 13);
+            this.lblPostCode.TabIndex = 42;
+            this.lblPostCode.Text = "Postcode";
             // 
-            // label12
+            // lblTown
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(11, 271);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(34, 13);
-            this.label12.TabIndex = 41;
-            this.label12.Text = "Town";
+            this.lblTown.AutoSize = true;
+            this.lblTown.Location = new System.Drawing.Point(11, 271);
+            this.lblTown.Name = "lblTown";
+            this.lblTown.Size = new System.Drawing.Size(34, 13);
+            this.lblTown.TabIndex = 41;
+            this.lblTown.Text = "Town";
             // 
-            // label11
+            // lblStreet
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 242);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(35, 13);
-            this.label11.TabIndex = 40;
-            this.label11.Text = "Street";
+            this.lblStreet.AutoSize = true;
+            this.lblStreet.Location = new System.Drawing.Point(12, 242);
+            this.lblStreet.Name = "lblStreet";
+            this.lblStreet.Size = new System.Drawing.Size(35, 13);
+            this.lblStreet.TabIndex = 40;
+            this.lblStreet.Text = "Street";
             // 
-            // label10
+            // lblHouseNo
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(11, 215);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(121, 13);
-            this.label10.TabIndex = 39;
-            this.label10.Text = "House Number or Name";
+            this.lblHouseNo.AutoSize = true;
+            this.lblHouseNo.Location = new System.Drawing.Point(11, 215);
+            this.lblHouseNo.Name = "lblHouseNo";
+            this.lblHouseNo.Size = new System.Drawing.Size(121, 13);
+            this.lblHouseNo.TabIndex = 39;
+            this.lblHouseNo.Text = "House Number or Name";
             // 
-            // label9
+            // lblLocation
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 185);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 13);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Factory Location";
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Location = new System.Drawing.Point(12, 185);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(86, 13);
+            this.lblLocation.TabIndex = 38;
+            this.lblLocation.Text = "Factory Location";
             // 
             // txtMachineComplexity
             // 
@@ -212,32 +212,32 @@
             this.txtJobUrgency.Size = new System.Drawing.Size(228, 20);
             this.txtJobUrgency.TabIndex = 3;
             // 
-            // label8
+            // lblComplex
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 138);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(125, 13);
-            this.label8.TabIndex = 35;
-            this.label8.Text = "Machine Complexity (1-5)";
+            this.lblComplex.AutoSize = true;
+            this.lblComplex.Location = new System.Drawing.Point(14, 138);
+            this.lblComplex.Name = "lblComplex";
+            this.lblComplex.Size = new System.Drawing.Size(125, 13);
+            this.lblComplex.TabIndex = 35;
+            this.lblComplex.Text = "Machine Complexity (1-5)";
             // 
-            // label7
+            // lblUrgancy
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 107);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 13);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "Job Urgency (1-5)";
+            this.lblUrgancy.AutoSize = true;
+            this.lblUrgancy.Location = new System.Drawing.Point(14, 107);
+            this.lblUrgancy.Name = "lblUrgancy";
+            this.lblUrgancy.Size = new System.Drawing.Size(91, 13);
+            this.lblUrgancy.TabIndex = 34;
+            this.lblUrgancy.Text = "Job Urgency (1-5)";
             // 
-            // label6
+            // lblFault
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 75);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Fault Description";
+            this.lblFault.AutoSize = true;
+            this.lblFault.Location = new System.Drawing.Point(15, 75);
+            this.lblFault.Name = "lblFault";
+            this.lblFault.Size = new System.Drawing.Size(86, 13);
+            this.lblFault.TabIndex = 33;
+            this.lblFault.Text = "Fault Description";
             // 
             // txtFaultDescription
             // 
@@ -246,14 +246,14 @@
             this.txtFaultDescription.Size = new System.Drawing.Size(228, 20);
             this.txtFaultDescription.TabIndex = 2;
             // 
-            // label4
+            // lblMachineDescription
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 13);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Machine Description";
+            this.lblMachineDescription.AutoSize = true;
+            this.lblMachineDescription.Location = new System.Drawing.Point(14, 48);
+            this.lblMachineDescription.Name = "lblMachineDescription";
+            this.lblMachineDescription.Size = new System.Drawing.Size(104, 13);
+            this.lblMachineDescription.TabIndex = 31;
+            this.lblMachineDescription.Text = "Machine Description";
             // 
             // txtMachineDescription
             // 
@@ -263,14 +263,14 @@
             this.txtMachineDescription.TabIndex = 1;
             this.txtMachineDescription.TextChanged += new System.EventHandler(this.txtMachineDescription_TextChanged);
             // 
-            // label3
+            // lblJobs
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Jobs";
+            this.lblJobs.AutoSize = true;
+            this.lblJobs.Location = new System.Drawing.Point(14, 20);
+            this.lblJobs.Name = "lblJobs";
+            this.lblJobs.Size = new System.Drawing.Size(29, 13);
+            this.lblJobs.TabIndex = 29;
+            this.lblJobs.Text = "Jobs";
             // 
             // btnCancel
             // 
@@ -281,14 +281,14 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.Location = new System.Drawing.Point(97, 359);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(97, 359);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
@@ -306,26 +306,26 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1131, 417);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtPostcode);
             this.Controls.Add(this.txtTown);
             this.Controls.Add(this.txtStreet);
             this.Controls.Add(this.txtHouseNumber);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblPostCode);
+            this.Controls.Add(this.lblTown);
+            this.Controls.Add(this.lblStreet);
+            this.Controls.Add(this.lblHouseNo);
+            this.Controls.Add(this.lblLocation);
             this.Controls.Add(this.txtMachineComplexity);
             this.Controls.Add(this.txtJobUrgency);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblComplex);
+            this.Controls.Add(this.lblUrgancy);
+            this.Controls.Add(this.lblFault);
             this.Controls.Add(this.txtFaultDescription);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblMachineDescription);
             this.Controls.Add(this.txtMachineDescription);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblJobs);
             this.Controls.Add(this.JobViewGrid);
             this.Name = "JobViewer";
             this.Text = "JobViewer";
@@ -342,22 +342,22 @@
         private System.Windows.Forms.TextBox txtTown;
         private System.Windows.Forms.TextBox txtStreet;
         private System.Windows.Forms.TextBox txtHouseNumber;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblPostCode;
+        private System.Windows.Forms.Label lblTown;
+        private System.Windows.Forms.Label lblStreet;
+        private System.Windows.Forms.Label lblHouseNo;
+        private System.Windows.Forms.Label lblLocation;
         private System.Windows.Forms.TextBox txtMachineComplexity;
         private System.Windows.Forms.TextBox txtJobUrgency;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblComplex;
+        private System.Windows.Forms.Label lblUrgancy;
+        private System.Windows.Forms.Label lblFault;
         private System.Windows.Forms.TextBox txtFaultDescription;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblMachineDescription;
         private System.Windows.Forms.TextBox txtMachineDescription;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblJobs;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
