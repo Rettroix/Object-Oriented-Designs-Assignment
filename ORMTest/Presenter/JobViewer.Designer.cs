@@ -130,7 +130,6 @@
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(228, 20);
             this.txtPostcode.TabIndex = 8;
-            this.txtPostcode.TextChanged += new System.EventHandler(this.txtPostcode_TextChanged);
             // 
             // txtTown
             // 
@@ -280,6 +279,7 @@
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDelete
             // 

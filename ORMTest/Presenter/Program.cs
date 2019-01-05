@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using System.Net.Mail;
 using Model;
 namespace Presenter
 {
@@ -118,7 +119,7 @@ namespace Presenter
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -154,9 +155,11 @@ namespace Presenter
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(125, 105);
+            this.txtName.MaxLength = 25;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(228, 20);
             this.txtName.TabIndex = 1;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // btnSave
             // 
@@ -208,10 +211,10 @@ namespace Presenter
             // AvailableJobs
             // 
             this.AvailableJobs.DataPropertyName = "AvailableJobs";
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.NullValue = "CLICK";
-            this.AvailableJobs.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.NullValue = "CLICK";
+            this.AvailableJobs.DefaultCellStyle = dataGridViewCellStyle2;
             this.AvailableJobs.HeaderText = "AvailableJobs";
             this.AvailableJobs.Name = "AvailableJobs";
             this.AvailableJobs.ReadOnly = true;
@@ -222,6 +225,7 @@ namespace Presenter
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(228, 20);
             this.txtEmail.TabIndex = 2;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // lblEmail
             // 
@@ -341,23 +345,61 @@ namespace Presenter
         }
 
 
+
+        public bool emailIsValid(string email)
+        {
+
+            try
+            {
+                MailAddress a = new MailAddress(email);
+                return true;
+            }
+            catch
+            {
+                return false; 
+            }
+
+        }
+
+        private void saveCompanyData()
+        {
+
+            if (txtName.Text != "" &&
+                           txtEmail.Text != "")
+            {
+                if (emailIsValid(txtEmail.Text))
+                {
+                    ClientCompany CodeStompIndustries = new ClientCompany();
+                    CodeStompIndustries.ClientName = txtName.Text.Trim();
+                    CodeStompIndustries.Email = txtEmail.Text.Trim();
+
+
+                    using (var context = new UniDBContext())
+                    {
+                        context.ClientCompanys.Add(CodeStompIndustries);
+                        context.SaveChanges();
+                    }
+                    clearText();
+                    MessageBox.Show("Submitted Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("please enter a valid email");
+                }
+            }
+            else
+            {
+
+                MessageBox.Show("please complete all fields");
+
+            }
+
+        }
+
         private void btnSave_Click(object sender,
                                    EventArgs e)
         {
-
-            ClientCompany CodeStompIndustries = new ClientCompany();
-            CodeStompIndustries.ClientName = txtName.Text.Trim();
-            CodeStompIndustries.Email = txtEmail.Text.Trim();
-
-
-            using (var context = new UniDBContext())
-            {
-                context.ClientCompanys.Add(CodeStompIndustries);
-                context.SaveChanges();
-            }
-            clearText();
-            MessageBox.Show("Submitted Successfully");
-
+            saveCompanyData();
         }
 
 
@@ -402,6 +444,22 @@ namespace Presenter
             }
         }
 
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.ActiveControl = txtEmail;
+            }
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                saveCompanyData();
+            }
+        }
     }
 }
 
