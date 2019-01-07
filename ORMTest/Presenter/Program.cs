@@ -30,6 +30,8 @@ namespace Presenter
         private DataGridViewTextBoxColumn ClientName;
         private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn AvailableJobs;
+        private CheckBox cbTerms;
+        private Label lblTerms;
         private DataGridView ClientGrid;
     
         public Program()
@@ -119,7 +121,7 @@ namespace Presenter
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -139,6 +141,8 @@ namespace Presenter
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbTerms = new System.Windows.Forms.CheckBox();
+            this.lblTerms = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ClientGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FactoryGrid)).BeginInit();
             this.SuspendLayout();
@@ -211,10 +215,10 @@ namespace Presenter
             // AvailableJobs
             // 
             this.AvailableJobs.DataPropertyName = "AvailableJobs";
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.NullValue = "CLICK";
-            this.AvailableJobs.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.NullValue = "CLICK";
+            this.AvailableJobs.DefaultCellStyle = dataGridViewCellStyle1;
             this.AvailableJobs.HeaderText = "AvailableJobs";
             this.AvailableJobs.Name = "AvailableJobs";
             this.AvailableJobs.ReadOnly = true;
@@ -315,9 +319,30 @@ namespace Presenter
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.ReadOnly = true;
             // 
+            // cbTerms
+            // 
+            this.cbTerms.AutoSize = true;
+            this.cbTerms.Location = new System.Drawing.Point(278, 265);
+            this.cbTerms.Name = "cbTerms";
+            this.cbTerms.Size = new System.Drawing.Size(59, 17);
+            this.cbTerms.TabIndex = 29;
+            this.cbTerms.Text = "I agree";
+            this.cbTerms.UseVisualStyleBackColor = true;
+            // 
+            // lblTerms
+            // 
+            this.lblTerms.AutoSize = true;
+            this.lblTerms.Location = new System.Drawing.Point(278, 246);
+            this.lblTerms.Name = "lblTerms";
+            this.lblTerms.Size = new System.Drawing.Size(108, 13);
+            this.lblTerms.TabIndex = 30;
+            this.lblTerms.Text = "Terms and conditions";
+            // 
             // Program
             // 
             this.ClientSize = new System.Drawing.Size(1120, 352);
+            this.Controls.Add(this.lblTerms);
+            this.Controls.Add(this.cbTerms);
             this.Controls.Add(this.FactoryGrid);
             this.Controls.Add(this.lblClientCompany);
             this.Controls.Add(this.btnCancel);
@@ -369,18 +394,25 @@ namespace Presenter
             {
                 if (emailIsValid(txtEmail.Text))
                 {
-                    ClientCompany CodeStompIndustries = new ClientCompany();
-                    CodeStompIndustries.ClientName = txtName.Text.Trim();
-                    CodeStompIndustries.Email = txtEmail.Text.Trim();
-
-
-                    using (var context = new UniDBContext())
+                    if (cbTerms.Checked)
                     {
-                        context.ClientCompanys.Add(CodeStompIndustries);
-                        context.SaveChanges();
+                        ClientCompany CodeStompIndustries = new ClientCompany();
+                        CodeStompIndustries.ClientName = txtName.Text.Trim();
+                        CodeStompIndustries.Email = txtEmail.Text.Trim();
+
+
+                        using (var context = new UniDBContext())
+                        {
+                            context.ClientCompanys.Add(CodeStompIndustries);
+                            context.SaveChanges();
+                        }
+                        clearText();
+                        MessageBox.Show("Submitted Successfully");
                     }
-                    clearText();
-                    MessageBox.Show("Submitted Successfully");
+                    else
+                    {
+                        MessageBox.Show("you must agree to the terms and conditions to continue"); 
+                    }
                 }
                 else
                 {
