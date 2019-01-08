@@ -51,7 +51,6 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Staff.cs" />
     <Compile Include="Address.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="ClientCompany.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,7 @@
-﻿using System;
+﻿//KF7012 Task 3 Implementation
+//Date: December 2018
+//Names: Elliot Anderson, Adam Cook
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,12 +30,6 @@ namespace Presenter
 
         }
 
-        private void dataGridView2_CellContentClick(object sender,
-                                                    DataGridViewCellEventArgs e)
-        {
-
-        }
-
         public void PopulateDataGridView()
         {
 
@@ -58,9 +55,23 @@ namespace Presenter
         private void btnSave_Click(object sender,
                                    EventArgs e)
         {
-            jobViewerPresenterInstance.SaveClick();
-            clearText();
-            MessageBox.Show("Submitted Successfully");
+            if (txtMachineDescription.Text.Equals(String.Empty) ||
+                txtFaultDescription.Text.Equals(String.Empty) ||
+                txtJobUrgency.Text.Equals(String.Empty) ||
+                txtMachineComplexity.Text.Equals(String.Empty) ||
+                txtHouseNumber.Text.Equals(String.Empty) ||
+                txtStreet.Text.Equals(String.Empty) ||
+                txtTown.Text.Equals(String.Empty) ||
+                txtPostcode.Text.Equals(String.Empty))
+            {
+                MessageBox.Show("Please complete all fields");
+            }
+            else
+            {
+                jobViewerPresenterInstance.SaveClick();
+                clearText();
+                MessageBox.Show("Submitted Successfully");
+            }
         }
 
         public string GetTxtMachineDescription()
@@ -115,50 +126,27 @@ namespace Presenter
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             clearText(); 
         }
 
-        private void txtMachineDescription_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtJobUrgency_TextChanged(object sender, EventArgs e)
         {
-            this.ActiveControl = txtFaultDescription;
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtJobUrgency.Text, "[^0-5]"))
+            {
+                MessageBox.Show("Please enter a value between 0 to 5");
+                txtJobUrgency.Text = String.Empty;
+            }
         }
 
-        private void txtFaultDescription_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtMachineComplexity_TextChanged(object sender, EventArgs e)
         {
-            this.ActiveControl = txtJobUrgency;
-        }
-
-        private void txtMachineComplexity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            this.ActiveControl = txtHouseNumber;
-        }
-        private void txtJobUrgency_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            this.ActiveControl = txtMachineComplexity;
-        }
-
-        private void txtHouseNumber_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            this.ActiveControl = txtStreet;
-        }
-
-        private void txtStreet_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            this.ActiveControl = txtTown;
-        }
-
-        private void txtTown_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            this.ActiveControl = txtPostcode;
-        }
-
-        private void txtPostcode_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            jobViewerPresenterInstance.SaveClick();
-            clearText();
-            MessageBox.Show("Submitted Successfully");
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtMachineComplexity.Text, "[^0-5]"))
+            {
+                MessageBox.Show("Please enter a value between 0 to 5");
+                txtMachineComplexity.Text = String.Empty;
+            }
         }
     }
 }

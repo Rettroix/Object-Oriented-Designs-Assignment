@@ -1,4 +1,7 @@
-﻿using System;
+﻿//KF7012 Task 3 Implementation
+//Date: December 2018
+//Names: Elliot Anderson, Adam Cook
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Model;
 using Presenter; 

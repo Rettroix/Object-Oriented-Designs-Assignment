@@ -48,28 +48,32 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(178, 371);
+            this.btnCancel.Location = new System.Drawing.Point(237, 457);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(100, 28);
             this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Clear";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(98, 371);
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Location = new System.Drawing.Point(131, 457);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(100, 28);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(16, 371);
+            this.btnSave.Location = new System.Drawing.Point(21, 457);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(100, 28);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -83,13 +87,13 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            this.StaffViewGrid.Location = new System.Drawing.Point(448, 32);
+            this.StaffViewGrid.Location = new System.Drawing.Point(597, 39);
+            this.StaffViewGrid.Margin = new System.Windows.Forms.Padding(4);
             this.StaffViewGrid.Name = "StaffViewGrid";
             this.StaffViewGrid.ReadOnly = true;
             this.StaffViewGrid.RowTemplate.Height = 24;
-            this.StaffViewGrid.Size = new System.Drawing.Size(659, 362);
+            this.StaffViewGrid.Size = new System.Drawing.Size(879, 446);
             this.StaffViewGrid.TabIndex = 7;
-            this.StaffViewGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.JobViewGrid_CellClick);
             // 
             // StaffID
             // 
@@ -122,76 +126,71 @@
             // AssignStaffTitle
             // 
             this.AssignStaffTitle.AutoSize = true;
-            this.AssignStaffTitle.Location = new System.Drawing.Point(29, 36);
-            this.AssignStaffTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AssignStaffTitle.Location = new System.Drawing.Point(39, 44);
             this.AssignStaffTitle.Name = "AssignStaffTitle";
-            this.AssignStaffTitle.Size = new System.Drawing.Size(63, 13);
+            this.AssignStaffTitle.Size = new System.Drawing.Size(83, 17);
             this.AssignStaffTitle.TabIndex = 72;
             this.AssignStaffTitle.Text = "Assign Staff";
             // 
             // lblStaffName
             // 
             this.lblStaffName.AutoSize = true;
-            this.lblStaffName.Location = new System.Drawing.Point(29, 76);
-            this.lblStaffName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStaffName.Location = new System.Drawing.Point(39, 94);
             this.lblStaffName.Name = "lblStaffName";
-            this.lblStaffName.Size = new System.Drawing.Size(60, 13);
+            this.lblStaffName.Size = new System.Drawing.Size(78, 17);
             this.lblStaffName.TabIndex = 73;
             this.lblStaffName.Text = "Staff Name";
             // 
             // lblStaffRole
             // 
             this.lblStaffRole.AutoSize = true;
-            this.lblStaffRole.Location = new System.Drawing.Point(29, 106);
-            this.lblStaffRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStaffRole.Location = new System.Drawing.Point(39, 130);
             this.lblStaffRole.Name = "lblStaffRole";
-            this.lblStaffRole.Size = new System.Drawing.Size(54, 13);
+            this.lblStaffRole.Size = new System.Drawing.Size(70, 17);
             this.lblStaffRole.TabIndex = 74;
             this.lblStaffRole.Text = "Staff Role";
             // 
             // lblJobDate
             // 
             this.lblJobDate.AutoSize = true;
-            this.lblJobDate.Location = new System.Drawing.Point(29, 134);
-            this.lblJobDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblJobDate.Location = new System.Drawing.Point(39, 165);
             this.lblJobDate.Name = "lblJobDate";
-            this.lblJobDate.Size = new System.Drawing.Size(50, 13);
+            this.lblJobDate.Size = new System.Drawing.Size(65, 17);
             this.lblJobDate.TabIndex = 75;
             this.lblJobDate.Text = "Job Date";
             // 
             // txtStaffName
             // 
-            this.txtStaffName.Location = new System.Drawing.Point(98, 76);
-            this.txtStaffName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStaffName.Location = new System.Drawing.Point(131, 94);
+            this.txtStaffName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStaffName.Name = "txtStaffName";
-            this.txtStaffName.Size = new System.Drawing.Size(308, 20);
+            this.txtStaffName.Size = new System.Drawing.Size(409, 22);
             this.txtStaffName.TabIndex = 1;
-            this.txtStaffName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStaffName_KeyPress);
             // 
             // txtStaffRole
             // 
-            this.txtStaffRole.Location = new System.Drawing.Point(98, 104);
-            this.txtStaffRole.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStaffRole.Location = new System.Drawing.Point(131, 128);
+            this.txtStaffRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStaffRole.Name = "txtStaffRole";
-            this.txtStaffRole.Size = new System.Drawing.Size(308, 20);
+            this.txtStaffRole.Size = new System.Drawing.Size(409, 22);
             this.txtStaffRole.TabIndex = 2;
-            this.txtStaffRole.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStaffRole_KeyPress);
             // 
             // mtxtJobDate
             // 
-            this.mtxtJobDate.Location = new System.Drawing.Point(98, 134);
+            this.mtxtJobDate.Location = new System.Drawing.Point(131, 165);
+            this.mtxtJobDate.Margin = new System.Windows.Forms.Padding(4);
             this.mtxtJobDate.Mask = "00/00/0000";
             this.mtxtJobDate.Name = "mtxtJobDate";
-            this.mtxtJobDate.Size = new System.Drawing.Size(308, 20);
+            this.mtxtJobDate.Size = new System.Drawing.Size(409, 22);
             this.mtxtJobDate.TabIndex = 3;
             this.mtxtJobDate.ValidatingType = typeof(System.DateTime);
             this.mtxtJobDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxtJobDate_KeyPress);
             // 
             // StaffAssigner
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 461);
+            this.ClientSize = new System.Drawing.Size(1491, 567);
             this.Controls.Add(this.mtxtJobDate);
             this.Controls.Add(this.txtStaffRole);
             this.Controls.Add(this.txtStaffName);
@@ -203,7 +202,9 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.StaffViewGrid);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "StaffAssigner";
             this.Text = "StaffAssigner";
             ((System.ComponentModel.ISupportInitialize)(this.StaffViewGrid)).EndInit();

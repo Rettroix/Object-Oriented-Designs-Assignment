@@ -1,4 +1,7 @@
-﻿using System;
+﻿//KF7012 Task 3 Implementation
+//Date: December 2018
+//Names: Elliot Anderson, Adam Cook
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,11 +28,6 @@ namespace Presenter
 
         }
 
-        private void JobViewGrid_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         public void SaveJobData()
         {
             if (txtStaffName.Text != "" &&
@@ -51,6 +49,8 @@ namespace Presenter
                     query.ToList()[jobIndex].Jobs.ToList()[staffIndex].AssignedStaff.Add(NewStaff);
                     context.SaveChanges();
                 }
+
+                MessageBox.Show("Submitted Successfully");
             }
             else
             {
@@ -93,22 +93,11 @@ namespace Presenter
         {
             SaveClick();
             clearText();
-            MessageBox.Show("Submitted Successfully");
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             clearText();
-        }
-
-        private void txtStaffName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            this.ActiveControl = txtStaffRole;
-        }
-
-        private void txtStaffRole_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            this.ActiveControl = mtxtJobDate;
         }
 
         private void mtxtJobDate_KeyPress(object sender, KeyPressEventArgs e)

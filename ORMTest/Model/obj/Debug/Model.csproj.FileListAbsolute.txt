@@ -18,3 +18,13 @@ C:\Users\Adam\Documents\GitHub\Object-Oriented-Designs-Assignment\ORMTest\Model\
 C:\Users\Adam\Documents\GitHub\Object-Oriented-Designs-Assignment\ORMTest\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\Adam\Documents\GitHub\Object-Oriented-Designs-Assignment\ORMTest\Model\obj\Debug\Model.dll
 C:\Users\Adam\Documents\GitHub\Object-Oriented-Designs-Assignment\ORMTest\Model\obj\Debug\Model.pdb
+D:\FINAL WORK SUBMIT\Elliot\Task 3 - Implementation\Source Code\Model\bin\Debug\Model.dll.config
+D:\FINAL WORK SUBMIT\Elliot\Task 3 - Implementation\Source Code\Model\bin\Debug\Model.dll
+D:\FINAL WORK SUBMIT\Elliot\Task 3 - Implementation\Source Code\Model\bin\Debug\Model.pdb
+D:\FINAL WORK SUBMIT\Elliot\Task 3 - Implementation\Source Code\Model\bin\Debug\EntityFramework.dll
+D:\FINAL WORK SUBMIT\Elliot\Task 3 - Implementation\Source Code\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\FINAL WORK SUBMIT\Elliot\Task 3 - Implementation\Source Code\Model\bin\Debug\EntityFramework.xml
+D:\FINAL WORK SUBMIT\Elliot\Task 3 - Implementation\Source Code\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\FINAL WORK SUBMIT\Elliot\Task 3 - Implementation\Source Code\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\FINAL WORK SUBMIT\Elliot\Task 3 - Implementation\Source Code\Model\obj\Debug\Model.dll
+D:\FINAL WORK SUBMIT\Elliot\Task 3 - Implementation\Source Code\Model\obj\Debug\Model.pdb

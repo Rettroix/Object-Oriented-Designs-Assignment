@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.JobViewGrid = new System.Windows.Forms.DataGridView();
             this.JobID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,14 +70,14 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.AssignStaff});
-            this.JobViewGrid.Location = new System.Drawing.Point(448, 20);
+            this.JobViewGrid.Location = new System.Drawing.Point(597, 25);
+            this.JobViewGrid.Margin = new System.Windows.Forms.Padding(4);
             this.JobViewGrid.Name = "JobViewGrid";
             this.JobViewGrid.ReadOnly = true;
             this.JobViewGrid.RowTemplate.Height = 24;
-            this.JobViewGrid.Size = new System.Drawing.Size(659, 362);
+            this.JobViewGrid.Size = new System.Drawing.Size(879, 446);
             this.JobViewGrid.TabIndex = 12;
             this.JobViewGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
-            this.JobViewGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // JobID
             // 
@@ -116,192 +116,210 @@
             // 
             // AssignStaff
             // 
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.NullValue = "Assign";
-            this.AssignStaff.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.NullValue = "Assign";
+            this.AssignStaff.DefaultCellStyle = dataGridViewCellStyle1;
             this.AssignStaff.HeaderText = "AssignStaff";
             this.AssignStaff.Name = "AssignStaff";
             this.AssignStaff.ReadOnly = true;
             // 
             // txtPostcode
             // 
-            this.txtPostcode.Location = new System.Drawing.Point(178, 299);
+            this.txtPostcode.Location = new System.Drawing.Point(237, 368);
+            this.txtPostcode.Margin = new System.Windows.Forms.Padding(4);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(228, 20);
+            this.txtPostcode.Size = new System.Drawing.Size(303, 22);
             this.txtPostcode.TabIndex = 8;
-            this.txtPostcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPostcode_KeyPress);
             // 
             // txtTown
             // 
-            this.txtTown.Location = new System.Drawing.Point(178, 271);
+            this.txtTown.Location = new System.Drawing.Point(237, 334);
+            this.txtTown.Margin = new System.Windows.Forms.Padding(4);
             this.txtTown.Name = "txtTown";
-            this.txtTown.Size = new System.Drawing.Size(228, 20);
+            this.txtTown.Size = new System.Drawing.Size(303, 22);
             this.txtTown.TabIndex = 7;
-            this.txtTown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTown_KeyPress);
             // 
             // txtStreet
             // 
-            this.txtStreet.Location = new System.Drawing.Point(178, 243);
+            this.txtStreet.Location = new System.Drawing.Point(237, 299);
+            this.txtStreet.Margin = new System.Windows.Forms.Padding(4);
             this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Size = new System.Drawing.Size(228, 20);
+            this.txtStreet.Size = new System.Drawing.Size(303, 22);
             this.txtStreet.TabIndex = 6;
-            this.txtStreet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStreet_KeyPress);
             // 
             // txtHouseNumber
             // 
-            this.txtHouseNumber.Location = new System.Drawing.Point(178, 215);
+            this.txtHouseNumber.Location = new System.Drawing.Point(237, 265);
+            this.txtHouseNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtHouseNumber.Name = "txtHouseNumber";
-            this.txtHouseNumber.Size = new System.Drawing.Size(228, 20);
+            this.txtHouseNumber.Size = new System.Drawing.Size(303, 22);
             this.txtHouseNumber.TabIndex = 5;
-            this.txtHouseNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHouseNumber_KeyPress);
             // 
             // lblPostCode
             // 
             this.lblPostCode.AutoSize = true;
-            this.lblPostCode.Location = new System.Drawing.Point(12, 299);
+            this.lblPostCode.Location = new System.Drawing.Point(16, 368);
+            this.lblPostCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPostCode.Name = "lblPostCode";
-            this.lblPostCode.Size = new System.Drawing.Size(52, 13);
+            this.lblPostCode.Size = new System.Drawing.Size(67, 17);
             this.lblPostCode.TabIndex = 42;
             this.lblPostCode.Text = "Postcode";
             // 
             // lblTown
             // 
             this.lblTown.AutoSize = true;
-            this.lblTown.Location = new System.Drawing.Point(11, 271);
+            this.lblTown.Location = new System.Drawing.Point(15, 334);
+            this.lblTown.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTown.Name = "lblTown";
-            this.lblTown.Size = new System.Drawing.Size(34, 13);
+            this.lblTown.Size = new System.Drawing.Size(42, 17);
             this.lblTown.TabIndex = 41;
             this.lblTown.Text = "Town";
             // 
             // lblStreet
             // 
             this.lblStreet.AutoSize = true;
-            this.lblStreet.Location = new System.Drawing.Point(12, 242);
+            this.lblStreet.Location = new System.Drawing.Point(16, 298);
+            this.lblStreet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStreet.Name = "lblStreet";
-            this.lblStreet.Size = new System.Drawing.Size(35, 13);
+            this.lblStreet.Size = new System.Drawing.Size(46, 17);
             this.lblStreet.TabIndex = 40;
             this.lblStreet.Text = "Street";
             // 
             // lblHouseNo
             // 
             this.lblHouseNo.AutoSize = true;
-            this.lblHouseNo.Location = new System.Drawing.Point(11, 215);
+            this.lblHouseNo.Location = new System.Drawing.Point(15, 265);
+            this.lblHouseNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHouseNo.Name = "lblHouseNo";
-            this.lblHouseNo.Size = new System.Drawing.Size(121, 13);
+            this.lblHouseNo.Size = new System.Drawing.Size(161, 17);
             this.lblHouseNo.TabIndex = 39;
             this.lblHouseNo.Text = "House Number or Name";
             // 
             // lblLocation
             // 
             this.lblLocation.AutoSize = true;
-            this.lblLocation.Location = new System.Drawing.Point(12, 185);
+            this.lblLocation.Location = new System.Drawing.Point(16, 228);
+            this.lblLocation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(86, 13);
+            this.lblLocation.Size = new System.Drawing.Size(113, 17);
             this.lblLocation.TabIndex = 38;
             this.lblLocation.Text = "Factory Location";
             // 
             // txtMachineComplexity
             // 
-            this.txtMachineComplexity.Location = new System.Drawing.Point(162, 138);
+            this.txtMachineComplexity.Location = new System.Drawing.Point(216, 170);
+            this.txtMachineComplexity.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMachineComplexity.MaxLength = 1;
             this.txtMachineComplexity.Name = "txtMachineComplexity";
-            this.txtMachineComplexity.Size = new System.Drawing.Size(228, 20);
+            this.txtMachineComplexity.Size = new System.Drawing.Size(303, 22);
             this.txtMachineComplexity.TabIndex = 4;
-            this.txtMachineComplexity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMachineComplexity_KeyPress);
+            this.txtMachineComplexity.TextChanged += new System.EventHandler(this.txtMachineComplexity_TextChanged);
             // 
             // txtJobUrgency
             // 
-            this.txtJobUrgency.Location = new System.Drawing.Point(162, 107);
+            this.txtJobUrgency.Location = new System.Drawing.Point(216, 132);
+            this.txtJobUrgency.Margin = new System.Windows.Forms.Padding(4);
+            this.txtJobUrgency.MaxLength = 1;
             this.txtJobUrgency.Name = "txtJobUrgency";
-            this.txtJobUrgency.Size = new System.Drawing.Size(228, 20);
+            this.txtJobUrgency.Size = new System.Drawing.Size(303, 22);
             this.txtJobUrgency.TabIndex = 3;
-            this.txtJobUrgency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJobUrgency_KeyPress);
+            this.txtJobUrgency.TextChanged += new System.EventHandler(this.txtJobUrgency_TextChanged);
             // 
             // lblComplex
             // 
             this.lblComplex.AutoSize = true;
-            this.lblComplex.Location = new System.Drawing.Point(14, 138);
+            this.lblComplex.Location = new System.Drawing.Point(19, 170);
+            this.lblComplex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblComplex.Name = "lblComplex";
-            this.lblComplex.Size = new System.Drawing.Size(125, 13);
+            this.lblComplex.Size = new System.Drawing.Size(167, 17);
             this.lblComplex.TabIndex = 35;
-            this.lblComplex.Text = "Machine Complexity (1-5)";
+            this.lblComplex.Text = "Machine Complexity (0-5)";
             // 
             // lblUrgancy
             // 
             this.lblUrgancy.AutoSize = true;
-            this.lblUrgancy.Location = new System.Drawing.Point(14, 107);
+            this.lblUrgancy.Location = new System.Drawing.Point(19, 132);
+            this.lblUrgancy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUrgancy.Name = "lblUrgancy";
-            this.lblUrgancy.Size = new System.Drawing.Size(91, 13);
+            this.lblUrgancy.Size = new System.Drawing.Size(123, 17);
             this.lblUrgancy.TabIndex = 34;
-            this.lblUrgancy.Text = "Job Urgency (1-5)";
+            this.lblUrgancy.Text = "Job Urgency (0-5)";
             // 
             // lblFault
             // 
             this.lblFault.AutoSize = true;
-            this.lblFault.Location = new System.Drawing.Point(15, 75);
+            this.lblFault.Location = new System.Drawing.Point(20, 92);
+            this.lblFault.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFault.Name = "lblFault";
-            this.lblFault.Size = new System.Drawing.Size(86, 13);
+            this.lblFault.Size = new System.Drawing.Size(114, 17);
             this.lblFault.TabIndex = 33;
             this.lblFault.Text = "Fault Description";
             // 
             // txtFaultDescription
             // 
-            this.txtFaultDescription.Location = new System.Drawing.Point(162, 75);
+            this.txtFaultDescription.Location = new System.Drawing.Point(216, 92);
+            this.txtFaultDescription.Margin = new System.Windows.Forms.Padding(4);
             this.txtFaultDescription.Name = "txtFaultDescription";
-            this.txtFaultDescription.Size = new System.Drawing.Size(228, 20);
+            this.txtFaultDescription.Size = new System.Drawing.Size(303, 22);
             this.txtFaultDescription.TabIndex = 2;
-            this.txtFaultDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFaultDescription_KeyPress);
             // 
             // lblMachineDescription
             // 
             this.lblMachineDescription.AutoSize = true;
-            this.lblMachineDescription.Location = new System.Drawing.Point(14, 48);
+            this.lblMachineDescription.Location = new System.Drawing.Point(19, 59);
+            this.lblMachineDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMachineDescription.Name = "lblMachineDescription";
-            this.lblMachineDescription.Size = new System.Drawing.Size(104, 13);
+            this.lblMachineDescription.Size = new System.Drawing.Size(136, 17);
             this.lblMachineDescription.TabIndex = 31;
             this.lblMachineDescription.Text = "Machine Description";
             // 
             // txtMachineDescription
             // 
-            this.txtMachineDescription.Location = new System.Drawing.Point(162, 48);
+            this.txtMachineDescription.Location = new System.Drawing.Point(216, 59);
+            this.txtMachineDescription.Margin = new System.Windows.Forms.Padding(4);
             this.txtMachineDescription.Name = "txtMachineDescription";
-            this.txtMachineDescription.Size = new System.Drawing.Size(228, 20);
+            this.txtMachineDescription.Size = new System.Drawing.Size(303, 22);
             this.txtMachineDescription.TabIndex = 1;
-            this.txtMachineDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMachineDescription_KeyPress);
             // 
             // lblJobs
             // 
             this.lblJobs.AutoSize = true;
-            this.lblJobs.Location = new System.Drawing.Point(14, 20);
+            this.lblJobs.Location = new System.Drawing.Point(19, 25);
+            this.lblJobs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblJobs.Name = "lblJobs";
-            this.lblJobs.Size = new System.Drawing.Size(29, 13);
+            this.lblJobs.Size = new System.Drawing.Size(38, 17);
             this.lblJobs.TabIndex = 29;
             this.lblJobs.Text = "Jobs";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(178, 359);
+            this.btnCancel.Location = new System.Drawing.Point(237, 442);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(100, 28);
             this.btnCancel.TabIndex = 11;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Clear";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(97, 359);
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Location = new System.Drawing.Point(129, 442);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(100, 28);
             this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(16, 359);
+            this.btnSave.Location = new System.Drawing.Point(21, 442);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(100, 28);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -309,9 +327,9 @@
             // 
             // JobViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 417);
+            this.ClientSize = new System.Drawing.Size(1508, 513);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
@@ -334,6 +352,9 @@
             this.Controls.Add(this.txtMachineDescription);
             this.Controls.Add(this.lblJobs);
             this.Controls.Add(this.JobViewGrid);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "JobViewer";
             this.Text = "JobViewer";
             ((System.ComponentModel.ISupportInitialize)(this.JobViewGrid)).EndInit();

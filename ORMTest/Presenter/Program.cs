@@ -1,4 +1,7 @@
-﻿using System;
+﻿//KF7012 Task 3 Implementation
+//Date: December 2018
+//Names: Elliot Anderson, Adam Cook
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,7 +39,6 @@ namespace Presenter
     
         public Program()
         {
-            //testDatabase();
             InitializeComponent();
             PopulateDataGridView();
         }
@@ -121,7 +123,7 @@ namespace Presenter
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -152,7 +154,7 @@ namespace Presenter
             this.lblName.AutoSize = true;
             this.lblName.Location = new System.Drawing.Point(73, 105);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.Size = new System.Drawing.Size(45, 17);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             // 
@@ -161,7 +163,7 @@ namespace Presenter
             this.txtName.Location = new System.Drawing.Point(125, 105);
             this.txtName.MaxLength = 25;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(228, 20);
+            this.txtName.Size = new System.Drawing.Size(228, 22);
             this.txtName.TabIndex = 1;
             this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
@@ -215,10 +217,10 @@ namespace Presenter
             // AvailableJobs
             // 
             this.AvailableJobs.DataPropertyName = "AvailableJobs";
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.NullValue = "CLICK";
-            this.AvailableJobs.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.NullValue = "CLICK";
+            this.AvailableJobs.DefaultCellStyle = dataGridViewCellStyle3;
             this.AvailableJobs.HeaderText = "AvailableJobs";
             this.AvailableJobs.Name = "AvailableJobs";
             this.AvailableJobs.ReadOnly = true;
@@ -227,7 +229,7 @@ namespace Presenter
             // 
             this.txtEmail.Location = new System.Drawing.Point(125, 133);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(228, 20);
+            this.txtEmail.Size = new System.Drawing.Size(228, 22);
             this.txtEmail.TabIndex = 2;
             this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
@@ -236,12 +238,13 @@ namespace Presenter
             this.lblEmail.AutoSize = true;
             this.lblEmail.Location = new System.Drawing.Point(73, 133);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.Size = new System.Drawing.Size(42, 17);
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "Email";
             // 
             // btnDelete
             // 
+            this.btnDelete.Enabled = false;
             this.btnDelete.Location = new System.Drawing.Point(174, 186);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
@@ -255,16 +258,16 @@ namespace Presenter
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Clear";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // lblClientCompany
             // 
             this.lblClientCompany.AutoSize = true;
             this.lblClientCompany.Location = new System.Drawing.Point(74, 79);
             this.lblClientCompany.Name = "lblClientCompany";
-            this.lblClientCompany.Size = new System.Drawing.Size(80, 13);
+            this.lblClientCompany.Size = new System.Drawing.Size(106, 17);
             this.lblClientCompany.TabIndex = 12;
             this.lblClientCompany.Text = "Client Company";
             // 
@@ -324,7 +327,7 @@ namespace Presenter
             this.cbTerms.AutoSize = true;
             this.cbTerms.Location = new System.Drawing.Point(278, 265);
             this.cbTerms.Name = "cbTerms";
-            this.cbTerms.Size = new System.Drawing.Size(59, 17);
+            this.cbTerms.Size = new System.Drawing.Size(74, 21);
             this.cbTerms.TabIndex = 29;
             this.cbTerms.Text = "I agree";
             this.cbTerms.UseVisualStyleBackColor = true;
@@ -334,7 +337,7 @@ namespace Presenter
             this.lblTerms.AutoSize = true;
             this.lblTerms.Location = new System.Drawing.Point(278, 246);
             this.lblTerms.Name = "lblTerms";
-            this.lblTerms.Size = new System.Drawing.Size(108, 13);
+            this.lblTerms.Size = new System.Drawing.Size(144, 17);
             this.lblTerms.TabIndex = 30;
             this.lblTerms.Text = "Terms and conditions";
             // 
@@ -353,6 +356,8 @@ namespace Presenter
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Program";
             this.Text = "Insert Update Delete";
             ((System.ComponentModel.ISupportInitialize)(this.ClientGrid)).EndInit();
@@ -363,13 +368,11 @@ namespace Presenter
         }
 
 
-        private void btnCancel_Click(object sender,
+        private void btnClear_Click(object sender,
                                    EventArgs e)
         {
             clearText();
         }
-
-
 
         public bool emailIsValid(string email)
         {
